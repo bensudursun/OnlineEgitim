@@ -1,0 +1,219 @@
+﻿
+@{
+    ViewBag.Title = "GirisYap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="nav nav-pills d-flex justify-content-center mb-3 mt-5" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Giriş Yap</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Üye Ol</button>
+    </li>
+
+</ul>
+<div class="tab-content" id="pills-tabContent">
+    <div class="" style="text-align:center">
+        <div class="card-body">
+            <h3>Merhaba,</h3>
+            <h7>Giriş yaparak veya üye olarak kolayca eğitim alabilir veya eğitim verebilirsiniz.</h7>
+        </div>
+    </div>
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="container mt-5" style="text-align:center">
+
+            <div class="d-flex justify-content-center">
+
+                <div class="col-md-6 col-sm-12 col-lg-6">
+                    <main class="form-signin">
+                        <form>
+                            <img class="mb-4" width="72" height="72" src="~/Content/img/pngegg.png" />
+
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput">E Posta</label>
+                            </div>
+                            <div class="form-floating mt-3">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                <label for="floatingPassword">Şifre</label>
+                            </div>
+
+                            <div class="d-flex justify-content-end mt-2">
+                                <label>
+                                    <a style="text-decoration:none;" href="/Uye/SifremiUnuttum"> Şifremi Unuttum</a>
+                                </label>
+                            </div>
+                            <button class="w-100 btn btn-lg btn-primary mt-4" type="submit">Giriş Yap</button>
+                        </form>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div> @*Giris Yap*@
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <div class="container mt-5" style="text-align:center">
+            <div class="d-flex justify-content-center">
+                <div class="col-md-6 col-sm-12 col-lg-6">
+                    <main class="form-signin">
+                        <form>
+                            <img class="mb-4" width="72" height="72" src="~/Content/img/pngegg.png" />
+
+
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput">E Posta</label>
+                            </div>
+                            <div class="form-floating mt-3">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                <label for="floatingPassword">Şifre</label>
+                                <div id="emailHelp" class="form-text d-flex justify-content-start">Şifreniz en az 7 karater olmalıdır.</div>
+                            </div>
+
+
+                            <button class="w-100 btn btn-lg btn-primary mt-4" type="submit">Üye Ol</button>
+                            <div class="checkbox mb-3 mt-3">
+                                <label>
+                                    <input id="emailHelp" type="checkbox" value="remember-me"> <a data-bs-toggle="modal" data-bs-target="#exampleModalScrollable" href="#"> Gizlilik Politikasını </a> okudum ve kabul ediyorum.
+
+                                </label>
+
+                            </div>
+                            <div class="modal fade show" id="exampleModalScrollable" tabindex="-1" aria-labelledby="exampleModalScrollableTitle">
+                                <div class="modal-dialog modal-dialog-scrollable">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalScrollableTitle">Gizlilik Politikası</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                GİZLİLİK/ÇEREZ/KİŞİSEL VERİLERİN KORUNMASI POLİTİKASI
+
+
+                                                ...FİRMA.ÜNVANI…’ne (“...firma.adı...”) aktarılan kişisel verilerin korunması konusundaki temel bilgilere aşağıda yer verilmiştir. ...firma.adı..., 6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) m. 10’dan doğan aydınlatma yükümlülüğünü yerine getirmek amacıyla aşağıdaki açıklamaları müşterilerimizin ve web-sitemizi ve/veya mobil uygulamalarımızı kullanan 3. kişilerin dikkatine sunar. ...firma.adı... işbu Kişisel Verilerin Korunması Hakkında Açıklama metnini yürürlükteki mevzuatta yapılabilecek değişiklikler çerçevesinde her zaman güncelleme hakkını saklı tutar.
+
+                                                1) Kişisel verilerin toplanmasının yasal dayanağı
+
+                                                Müşterilerimizin kişisel verilerinin kullanılması konusunda çeşitli kanunlarda düzenlemeler bulunmaktadır. En başta KVKK ile kişisel verilerin korunması esasları belirlenmiştir. Ayrıca 6563 Sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun da kişisel verilerin korunmasına ilişkin hüküm içermektedir. 5237 Sayılı Türk Ceza Kanunu hükümleri yoluyla da kişisel verilerin korunması için bazı hallerde cezai yaptırımlar öngörülmüştür.
+
+                                                Diğer yandan, 6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği’nden doğan yükümlülüklerimizin ifası amacıyla verilerin toplanması ve kullanılması gerekmektedir.
+
+                                                2) Kişisel verilerin toplanmasında kullanılan yöntemler
+
+                                                a) www....firma.adı....com web sitesinden veya mobil uygulamalardan işlem yapan müşterilerimizin verdikleri veriler, müşterilerimizin rızaları ve mevzuat hükümleri uyarınca ...firma.adı... tarafından işlenmektedir.
+
+                                                b) ...firma.adı...’a ait olan www....firma.adı....com web sitesi çerez (cookie) kullanan bir sitedir. Çerez; kullanılmakta olan cihazın internet tarayıcısına ya da sabit diskine depolanarak söz konusu cihazın tespit edilmesine olanak tanıyan, çoğunlukla harf ve sayılardan oluşan bir dosyadır.
+
+                                                c) www....firma.adı....com ziyaretçilerine daha iyi hizmet verebilmek amacıyla ve yasal yükümlülüğü çerçevesinde, işbu Kişisel Verilerin Korunması Hakkında Açıklama metninde belirlenen amaçlar ve kapsam dışında kullanılmamak kaydı ile gezinme bilgilerinizi toplayacak, işleyecek, üçüncü kişilerle paylaşacak ve güvenli olarak saklayacaktır.
+
+                                                d) www....firma.adı....com çerezleri; günlük dosyaları, boş gif dosyaları ve/veya üçüncü taraf kaynakları yoluyla topladığı bilgileri tercihlerinizle ilgili bir özet oluşturmak amacıyla depolar. www....firma.adı....com size özel tanıtım yapmak, promosyonlar ve pazarlama teklifleri sunmak, web sitesinin veya mobil uygulamanın içeriğini size göre iyileştirmek ve/veya tercihlerinizi belirlemek amacıyla; site üzerinde gezinme bilgilerinizi ve/veya site üzerindeki kullanım geçmişinizi izleyebilmektedir.
+
+                                                e) www....firma.adı....com çevrimiçi ve çevrimdışı olarak toplanan bilgiler gibi farklı yöntemlerle veya farklı zamanlarda site üzerinde sizden toplanan bilgileri eşleştirebilir ve bu bilgileri üçüncü taraflar gibi başka kaynaklardan alınan bilgilerle birlikte kullanabilir.
+
+                                                f) www....firma.adı....com mobil uygulamasında oturum çerezleri ve kalıcı çerezler kullanmaktadır. Oturum kimliği çerezi, tarayıcınızı kapattığınızda sona erer. Kalıcı çerez ise sabit diskinizde uzun bir süre kalır. İnternet tarayıcınızın "yardım" dosyasında verilen talimatları izleyerek veya “www.allaboutcookies.org” veya “www.youronlinechoices.eu” adresini ziyaret ederek kalıcı çerezleri kaldırabilir ve hem oturum çerezlerini hem de kalıcı çerezleri reddedebilirsiniz. Kalıcı çerezleri veya oturum çerezlerini reddederseniz, web sitesini, mobil uygulamayı kullanmaya devam edebilirsiniz fakat web sitesinin, mobil uygulamanın tüm işlevlerine erişemeyebilirsiniz veya erişiminiz sınırlı olabilir.
+
+                                                3) İnternet Sitesi Çerezlerin kullanımı
+
+                                                a) www....firma.adı....com çerezleri; yaptığınız tercihleri hatırlamak ve web sitesi/mobil uygulama kullanımınızı kişiselleştirmek için kullanır. Bu kullanım parolanızı kaydeden ve web sitesi/mobil uygulama oturumunuzun sürekli açık kalmasını sağlayan, böylece her ziyaretinizde birden fazla kez parola girme zahmetinden kurtaran çerezleri ve web sitesi/mobil uygulamaya daha sonraki ziyaretlerinizde sizi hatırlayan ve tanıyan çerezleri içerir.
+
+                                                b) www....firma.adı....com web sitesine nereden bağlandığınız, web sitesi/mobil uygulama üzerinde hangi içeriği görüntülediğiniz ve ziyaretinizin süresi gibi web sitesini/mobil uygulamayı nasıl kullandığınızın izlenmesi dahil olmak üzere; web sitesini/mobil uygulamayı nasıl kullandığınızı belirlemek için kullanır.
+
+                                                c) www....firma.adı....com web sitesindeki çerezler ilgi alanlarınıza ve size daha uygun içerik ve reklamları sunmak için reklam/tanıtım amacıyla kullanılır. Bu şekilde, web sitesini, mobil uygulamasını kullandığınızda size daha uygun içerikleri, kişiye özel kampanya ve ürünleri sunar ve daha önceden istemediğinizi belirttiğiniz içerik veya fırsatları bir daha sunmaz.
+
+                                                4) İnternet Sitesi üçüncü taraf çerezlerini reklam ve yeniden hedefleme için kullanımı
+
+                                                www....firma.adı....com web sitesi çerezleri ayrıca; arama motorlarını, web sitesi, mobil uygulamasını ve/veya web sitesinin reklam verdiği internet sitelerini ziyaret ettiğinizde ilginizi çekebileceğini düşündüğü reklamları size sunabilmek için “reklam teknolojisini” devreye sokmak amacıyla kullanabilir. Reklam teknolojisi, size özel reklamlar sunabilmek için web sitesine/mobil uygulamaya ve web sitesinin reklam verdiği web sitelerine/mobil uygulamalarına yaptığınız önceki ziyaretlerle ilgili bilgileri kullanır. Bu reklamları sunarken, web sitesinin sizi tanıyabilmesi amacıyla tarayıcınıza benzersiz bir üçüncü taraf çerezi yerleştirilebilir. İnternet tarayıcınızın "yardım" dosyasında verilen talimatları izleyerek veya “www.allaboutcookies.org” ya da “www.youronlinechoices.eu” adresini ziyaret ederek kalıcı çerezleri kaldırabilir ve hem oturum çerezlerini hem de kalıcı çerezleri reddedebilirsiniz.
+
+                                                5) Kişisel verilerin toplanma amaçları
+
+                                                ...firma.adı..., mevzuatın izin verdiği durumlarda ve ölçüde kişisel bilgilerinizi kaydedebilecek, saklayabilecek, güncelleyebilecek, üçüncü kişilere açıklayabilecek, devredebilecek, sınıflandırabilecek ve işleyebilecektir.
+
+                                                Kişisel verileriniz şu amaçlarla kullanılmaktadır;
+
+                                                a) web sitesi/mobil uygulamalar üzerinden alışveriş yapanın/yaptıranın kimlik bilgilerini teyit etmek,
+
+                                                b) iletişim için adres ve diğer gerekli bilgileri kaydetmek,
+
+                                                c) mesafeli satış sözleşmesi ve Tüketicinin Korunması Hakkında Kanun’un ilgili maddeleri tahtında akdettiğimiz sözleşmelerin koşulları, güncel durumu ve güncellemeler ile ilgili müşterilerimiz ile iletişime geçmek, gerekli bilgilendirmeleri yapabilmek,
+
+                                                d) elektronik (internet/mobil vs.) veya kağıt ortamında işleme dayanak olacak tüm kayıt ve belgeleri düzenlemek,
+
+                                                e) mesafeli satış sözleşmesi ve Tüketicinin Korunması Hakkında Kanun’un ilgili maddeleri tahtında akdettiğimiz sözleşmeler uyarınca üstlenilen yükümlülükleri ifa etmek,
+
+                                                f) kamu güvenliğine ilişkin hususlarda talep halinde ve mevzuat gereği kamu görevlilerine bilgi verebilmek,
+
+                                                g) müşterilerimize daha iyi bir alışveriş deneyimini sağlamak, “müşterilerimizin ilgi alanlarını dikkate alarak” müşterilerimizin ilgilenebileceği ürünlerimiz hakkında müşterilerimize bilgi verebilmek, kampanyaları aktarmak,
+
+                                                h) müşteri memnuniyetini artırmak, web sitesi ve/veya mobil uygulamalardan alışveriş yapan müşterilerimizi tanıyabilmek ve müşteri çevresi analizinde kullanabilmek, çeşitli pazarlama ve reklam faaliyetlerinde kullanabilmek ve bu kapsamda anlaşmalı kuruluşlar aracılığıyla elektronik ortamda ve/veya fiziki ortamda anketler düzenlemek,
+
+                                                i) anlaşmalı kurumlarımız ve çözüm ortaklarımız tarafından müşterilerimize öneri sunabilmek, hizmetlerimizle ilgili müşterilerimizi bilgilendirebilmek,
+
+                                                j) hizmetlerimiz ile ilgili müşteri şikayet ve önerilerini değerlendirebilmek,
+
+                                                k) yasal yükümlülüklerimizi yerine getirebilmek ve yürürlükteki mevzuattan doğan haklarımızı kullanabilmek.
+
+                                                6) Kişisel verilerinizin korunması
+
+                                                ...firma.adı... ile paylaşılan kişisel veriler, ...firma.adı... gözetimi ve kontrolü altındadır. ...firma.adı..., yürürlükteki ilgili mevzuat hükümleri gereğince bilginin gizliliğinin ve bütünlüğünün korunması amacıyla gerekli organizasyonu kurmak ve teknik önlemleri almak ve uyarlamak konusunda veri sorumlusu sıfatıyla sorumluluğu üstlenmiştir. Bu konudaki yükümlülüğümüzün bilincinde olarak veri gizliliğini konu alan uluslararası ve ulusal teknik standartlara uygun surette periyodik aralıklarda sızma testleri yaptırılmakta ve bu kapsamda veri işleme politikalarımızı her zaman güncellediğimizi bilginize sunarız.
+
+                                                7) Kişisel verilerinizin paylaşımı
+
+                                                Müşterilerimize ait kişisel verilerin üçüncü kişiler ile paylaşımı, müşterilerin izni çerçevesinde gerçekleşmekte ve kural olarak müşterimizin onayı olmaksızın kişisel verileri üçüncü kişilere aktarılmamaktadır.
+
+                                                Bununla birlikte, yasal yükümlülüklerimiz nedeniyle ve bunlarla sınırlı olmak üzere mahkemeler ve diğer kamu kurumları ile kişisel veriler paylaşılmaktadır. Ayrıca, taahhüt ettiğimiz hizmetleri sağlayabilmek ve verilen hizmetlerin kalite kontrolünü yapabilmek için anlaşmalı üçüncü kişilere kişisel veri aktarımı yapılmaktadır.
+
+                                                Üçüncü kişilere veri aktarımı sırasında hak ihlallerini önlemek için gerekli teknik ve hukuki önlemler alınmaktadır. Bununla birlikte, kişisel verileri alan üçüncü kişinin veri koruma politikalarından dolayı ve üçüncü kişinin sorumluluğundaki risk alanında meydana gelen ihlallerden ...firma.adı... sorumlu değildir.
+
+                                                Kişisel verileriniz ...firma.adı...’nın hissedarlarıyla, doğrudan/dolaylı yurtiçi/yurtdışı iştiraklerimize, faaliyetlerimizi yürütebilmek için işbirliği yaptığımız program ortağı kurum, kuruluşlarla, verilerin bulut ortamında saklanması hizmeti aldığımız yurtiçi/yurtdışı kişi ve kurumlarla, müşterilerimize ticari elektronik iletilerin gönderilmesi konusunda anlaşmalı olduğumuz yurtiçi/yurtdışındaki kuruluşlarla, Bankalararası Kart Merkeziyle, anlaşmalı olduğumuz bankalarla ve sizlere daha iyi hizmet sunabilmek ve müşteri memnuniyetini sağlayabilmek için çeşitli pazarlama faaliyetleri kapsamında yurtiçi ve yurtdışındaki çeşitli ajans, reklam şirketleri ve anket şirketleriyle ve yurtiçi/yurtdışı diğer üçüncü kişilerle ve ilgili iş ortaklarımızla paylaşılabilmektedir.
+
+                                                8) Kişisel Verilerin Korunması Kanunu’ndan doğan haklarınız
+
+                                                KVKK uyarınca kişisel verilerinizin;
+
+                                                a) işlenip işlenmediğini öğrenme,
+
+                                                b) işlenmişse bilgi talep etme,
+
+                                                c) işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme,
+
+                                                d) yurt içinde / yurt dışında aktarıldığı 3. kişileri bilme,
+
+                                                e) eksik / yanlış işlenmişse düzeltilmesini isteme,
+
+                                                f) KVKK’nın 7. maddesinde öngörülen şartlar çerçevesinde silinmesini / yok edilmesini isteme,
+
+                                                g) aktarıldığı 3. kişilere yukarıda sayılan (d) ve (e) bentleri uyarınca yapılan işlemlerin bildirilmesini isteme,
+
+                                                h) münhasıran otomatik sistemler ile analiz edilmesi nedeniyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme,
+
+                                                i) KVKK’ya aykırı olarak işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme haklarına sahip olduğunuzu hatırlatmak isteriz.
+
+                                                j) Başvuru formu için tıklayınız.
+
+                                                9) Kişisel verilerle ilgili mevzuat değişiklikleri
+
+                                                KVKK uyarınca sahip olduğunuz haklar ...firma.adı...’nın yükümlülükleridir. Kişisel verilerinizi bu bilinçle ve mevzuatın gerektirdiği ölçüde işlediğimizi, yasal değişikliklerin olması halinde sayfamızda yer alan bu bilgileri yeni mevzuata uygun güncelleyeceğimizi, yapılan güncellemeleri de bu sayfa üzerinden her zaman kolaylıkla takip edebileceğinizi size bildirmek isteriz.
+
+                                                10) Verinin güncel ve doğru tutulması ve saklanması
+
+                                                KVKK’nın 4. maddesi uyarınca ...firma.adı...’nın kişisel verilerinizi doğru ve güncel olarak tutma yükümlülüğü bulunmaktadır. Bu kapsamda ...firma.adı...’nın yürürlükteki mevzuattan doğan yükümlülüklerini yerine getirebilmesi için müşterilerimizin ...firma.adı...’la doğru ve güncel verilerini paylaşması gerekmektedir. Verilerinizin herhangi bir surette değişikliğe uğraması halinde aşağıda belirtilen iletişim kanallarından bizimle iletişime geçerek verilerinizi güncellemenizi rica ederiz.
+
+                                                11) Kişisel verilerinizle ilgili bilgi
+
+                                                Bize kişisel verilerinizle ilgili her türlü soru ve görüşleriniz için info...firma.adı....com e-posta adresinden dilediğiniz zaman ulaşabilirsiniz.
+
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div> @*Uye Ol*@
+</div>
+
+

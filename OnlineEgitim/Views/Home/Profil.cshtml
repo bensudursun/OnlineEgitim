@@ -1,0 +1,124 @@
+﻿
+@{
+    ViewBag.Title = "Profil";
+}
+<head>
+    <style>
+        .avatar {
+            vertical-align: middle;
+            width: 250px;
+            height:160px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<div class="d-flex align-items-start ms-5">
+    <div class="nav flex-column nav-pills ms-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+        <img class="avatar" src="~/Content/img/207-2074624_white-gray-circle-avatar-png-transparent-png-removebg-preview.png" />
+        <hr class="featurette-divider">
+<h4 style="text-align:center">Bensu Dursun</h4>
+        <button class="nav-link  mt-3 " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Profilim</button>
+
+        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Şifre Güncelleme</button>
+    </div>
+
+    <div class="tab-content " id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <div class="container  w-100 mb-5 ">
+
+                <div class="container">
+
+                    <div class="col-md-12">
+
+                        <div class="card mb-5 baslik">
+                            <div class="card-body">
+                                <h5 style="color:#ff685f; text-align:center"> Kendiniz hakkında bilgiler ekleyin</h5>
+
+                            </div>
+                        </div>
+                        <div class="container">
+                            <form class="row g-3">
+                                <div class="col-md-12 ">
+                                    <label for="inputEmail4" class="form-label input">Ad</label>
+                                    <input style="background-color: #fbfbfb; border: solid 1px #e6e6e6; border-radius: 6px;" type="email" class="form-control" id="inputEmail4">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="inputPassword4" class="form-label">Soyad</label>
+                                    <input style="background-color: #fbfbfb; border: solid 1px #e6e6e6; border-radius: 6px;" type="password" class="form-control" id="inputPassword4">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="inputAddress" class="form-label">E-Mail</label>
+                                    <input style="background-color: #fbfbfb; border: solid 1px #e6e6e6; border-radius: 6px;" type="text" class="form-control" id="inputAddress">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="inputAddress2" class="form-label">Cep Telefonu </label>
+                                    <input style="background-color: #fbfbfb; border: solid 1px #e6e6e6; border-radius: 6px;" type="text" class="form-control" id="inputAddress2">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="inputCity" class="form-label">Doğum Tarihi</label>
+                                    <input style="background-color: #fbfbfb; border: solid 1px #e6e6e6; border-radius: 6px;" type="text" class="form-control" id="inputCity">
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <div class="input-group-text">http://www.linkedin.com/</div>
+                                        <input style="background-color: #fbfbfb; border: solid 1px #e6e6e6; border-radius: 6px;" type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Linkedin Profili">
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-12">
+                                    <button class="w-100 btn btn-lg  mt-4 btnhover" style=" border-color: #ff685f;" type="submit">KAYDET</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade " id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+            <div class="container  w-100  mb-5 ">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="card mb-5 baslik">
+                            <div class="card-body">
+                                <h5 style="color:#ff685f; text-align:center"> Şifre Güncelle</h5>
+
+                            </div>
+                        </div>
+                        <div class="container">
+
+                            <form class="row g-3">
+
+                                <div class="col-md-12">
+                                    <label for="inputPassword5" class="form-label">Eski Şifre</label>
+                                    <input style="background-color: #fbfbfb; border: solid 1px #e6e6e6; border-radius: 6px;" type="email" class="form-control" id="inputEmail4">
+                                    <div id="passwordHelpBlock" class="form-text">
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="inputPassword5" class="form-label">Yeni Şifre</label>
+                                    <input style="background-color: #fbfbfb; border: solid 1px #e6e6e6; border-radius: 6px;" type="email" class="form-control" id="inputEmail4">
+                                    <div id="passwordHelpBlock" class="form-text">
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="inputPassword5" class="form-label">Yeni Şifre (Tekrar)</label>
+                                    <input style="background-color: #fbfbfb; border: solid 1px #e6e6e6; border-radius: 6px;" type="email" class="form-control" id="inputEmail4">
+                                    <div id="passwordHelpBlock" class="form-text">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="w-100 btn btn-lg  mt-4 btnhover" style=" border-color: #ff685f;" type="submit">Güncelle</button>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
