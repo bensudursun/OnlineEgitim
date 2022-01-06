@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "GirisYap";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -10,7 +9,6 @@
     <li class="nav-item" role="presentation">
         <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Üye Ol</button>
     </li>
-
 </ul>
 <div class="tab-content" id="pills-tabContent">
     <div class="" style="text-align:center">
@@ -26,15 +24,18 @@
 
                 <div class="col-md-6 col-sm-12 col-lg-6">
                     <main class="form-signin">
-                        <form>
+                        @using (Html.BeginForm("GirisYap", "Giris", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+
                             <img class="mb-4" width="72" height="72" src="~/Content/img/pngegg.png" />
 
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <input type="text" name="kullaniciadi" class="form-control" id="floatingInput">
                                 <label for="floatingInput">E Posta</label>
                             </div>
                             <div class="form-floating mt-3">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                <input type="password" name="sifre" class="form-control" id="floatingPassword" placeholder="Password">
                                 <label for="floatingPassword">Şifre</label>
                             </div>
 
@@ -44,7 +45,7 @@
                                 </label>
                             </div>
                             <button class="w-100 btn btn-lg btn-primary mt-4" type="submit">Giriş Yap</button>
-                        </form>
+                        }
                     </main>
                 </div>
             </div>
@@ -55,9 +56,11 @@
             <div class="d-flex justify-content-center">
                 <div class="col-md-6 col-sm-12 col-lg-6">
                     <main class="form-signin">
-                        <form>
-                            <img class="mb-4" width="72" height="72" src="~/Content/img/pngegg.png" />
+                        @using (Html.BeginForm("UyeOl", "Giris", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
 
+                            <img class="mb-4" width="72" height="72" src="~/Content/img/pngegg.png" />
 
                             <div class="form-floating">
                                 <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -69,14 +72,11 @@
                                 <div id="emailHelp" class="form-text d-flex justify-content-start">Şifreniz en az 7 karater olmalıdır.</div>
                             </div>
 
-
                             <button class="w-100 btn btn-lg btn-primary mt-4" type="submit">Üye Ol</button>
                             <div class="checkbox mb-3 mt-3">
                                 <label>
                                     <input id="emailHelp" type="checkbox" value="remember-me"> <a data-bs-toggle="modal" data-bs-target="#exampleModalScrollable" href="#"> Gizlilik Politikasını </a> okudum ve kabul ediyorum.
-
                                 </label>
-
                             </div>
                             <div class="modal fade show" id="exampleModalScrollable" tabindex="-1" aria-labelledby="exampleModalScrollableTitle">
                                 <div class="modal-dialog modal-dialog-scrollable">
@@ -88,7 +88,6 @@
                                         <div class="modal-body">
                                             <p>
                                                 GİZLİLİK/ÇEREZ/KİŞİSEL VERİLERİN KORUNMASI POLİTİKASI
-
 
                                                 ...FİRMA.ÜNVANI…’ne (“...firma.adı...”) aktarılan kişisel verilerin korunması konusundaki temel bilgilere aşağıda yer verilmiştir. ...firma.adı..., 6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) m. 10’dan doğan aydınlatma yükümlülüğünü yerine getirmek amacıyla aşağıdaki açıklamaları müşterilerimizin ve web-sitemizi ve/veya mobil uygulamalarımızı kullanan 3. kişilerin dikkatine sunar. ...firma.adı... işbu Kişisel Verilerin Korunması Hakkında Açıklama metnini yürürlükteki mevzuatta yapılabilecek değişiklikler çerçevesinde her zaman güncelleme hakkını saklı tutar.
 
@@ -201,19 +200,15 @@
                                                 11) Kişisel verilerinizle ilgili bilgi
 
                                                 Bize kişisel verilerinizle ilgili her türlü soru ve görüşleriniz için info...firma.adı....com e-posta adresinden dilediğiniz zaman ulaşabilirsiniz.
-
                                             </p>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        }
                     </main>
                 </div>
             </div>
         </div>
     </div> @*Uye Ol*@
 </div>
-
-
