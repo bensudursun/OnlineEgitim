@@ -31,6 +31,8 @@ namespace OnlineEgitim.Controllers
                 Session["kullanicid"] = kullanici.KullaniciId;
 
                 var yetki = (from y in db.Yetki where y.KullaniciId == kullanici.KullaniciId select y).FirstOrDefault();
+                Session["yetkiid"] = yetki.YetkiId;
+
                 if (yetki.YetkiTurId == 1)
                 {
                     FormsAuthentication.SetAuthCookie(kullanici.Kullaniciadi, false);
@@ -58,6 +60,7 @@ namespace OnlineEgitim.Controllers
 
         public ActionResult Cikis()
         {
+            Session["yetkiid"] = null;
             FormsAuthentication.SignOut();
             return RedirectToAction("GirisYap", "Giris");
         }
