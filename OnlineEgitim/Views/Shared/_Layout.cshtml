@@ -4,10 +4,6 @@
 
     <title>@ViewBag.Title</title>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
-    <link href="~/Content/Site.css" rel="stylesheet" />
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
     <style>
 
         .dropdown-toggle {
@@ -20,11 +16,9 @@
     @Html.Partial("_Header")
 
         @RenderBody()
-        <hr />
         @Html.Partial("_Footer")
 
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/bootstrap.bundle.min.js"></script>
-    @RenderSection("scripts", required: false)
 </body>
 </html>

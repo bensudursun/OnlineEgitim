@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "EgitmenKayit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <h2>Eğitmen Ol</h2>
+            <p class="lead">Eğitim platformumuzda siz de var olmak ister misiniz?</p>
+        </div>
+
+        <div class="row g-5 justify-content-center">
+
+            <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3 text-center">Başvuru Formu</h4>
+                <form class="needs-validation" novalidate>
+                    <div class="row g-3">
+                        <div class="col-sm-12">
+                            <label for="firstName" class="form-label">Ad Soyad<span class="text-muted">*</span> </label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="kullaniciadi" class="form-label">Kullanıcı Adı<span class="text-muted">*</span></label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text"></span>
+                                <input type="text" class="form-control" id="username" placeholder="Username" required>
+                                <div class="invalid-feedback">
+                                    Your username is required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="email" class="form-label">E-mail<span class="text-muted">*</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
+                            <div class="invalid-feedback">
+                                Please enter a valid email address for shipping updates.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="password" class="form-label">Şifre <span class="text-muted">*</span> </label>
+                            <input type="password" class="form-control" id="address2">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="dogumtarihi" class="form-label">Doğum Tarihi<span class="text-muted">*</span></label>
+                            <input type="date" class="form-control" id="address" placeholder="1234 Main St" required>
+                            <div class="invalid-feedback">
+                                Please enter your shipping address.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="fotograf" class="form-label">Fotoğraf <span class="text-muted">*</span></label>
+                            <input type="file" class="form-control" id="fotograf">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="fotograf" class="form-label">Belge <span class="text-muted">*</span></label>
+                            <input type="file" class="form-control" id="fotograf">
+                        </div>
+                    </div>
+                    <br>
+
+                    <button class="w-100 btn btn-lg  mt-4 btnhover" style=" border-color: #ff685f;" type="submit">KAYDET</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
