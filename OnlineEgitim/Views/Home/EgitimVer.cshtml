@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "EgitimVer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ViewModel
+<head>
+    <link href="~/Content/egitimver.css" rel="stylesheet" />
+</head>
+@using (Html.BeginForm("EgitimVer", "Home", FormMethod.Post))
+{
+    <div id="booking-form" style="margin-top:150px; margin-bottom:150px">
+
+        <div class="tab-content">
+            <div class="tab-pane" id="step1">
+                <ul>
+                    <li>
+                        <label>
+                            Çalışma başlığının ne olacağını düşündünüz mü?
+                        </label>
+                        <div class="errorTxt">
+                        </div>
+                        <input type="text" class="datepicker" name="egitimbasligi">
+                    </li>
+                    <li style="list-style: none; display: inline">
+                        <button class="next-btn next-btn1" type="button">Devam</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-pane" id="step2">
+                <ul>
+
+                    <li>
+                        <label>
+                            Paylaşacağınız bilgiler için en uygun kategori nedir?
+                        </label>
+                        <div class="errorTxt"></div>
+
+                        <select name="kategori">
+                            <option value="">Kategori seçiniz</option>
+
+                            @foreach (var o in Model.Kategoris)
+                            {
+                                <option value="@o.KategoriId">@o.Kategoriad</option>
+                            }
+                        </select>
+                    </li>
+
+                    <li>
+                        <button class="next-btn next-btn2" type="button">Devam</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-pane" id="step3">
+                <ul>
+
+                    <li>
+                        <label>Eğitiminizle ilgili açıklama yapar mısınız?</label>
+                        <textarea name="aciklama"></textarea>
+                    </li>
+                    <li>
+                        <button class="btn" type="submit">Devam</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="progress-wrap">
+            <div class="line-progress-bar">
+                <div class="line"></div>
+                <ul class="checkout-bar">
+                    <li class="progressbar-dots active"><span>step 1</span></li>
+                    <li class="progressbar-dots"><span>step 2</span></li>
+                    <li class="progressbar-dots"><span>Final step</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+}
+
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script>
+    var v = $("#booking-form").validate({
+        rules: {
+            bf_totalGuests: {
+                required: true
+            },
+            bf_date: {
+                required: true
+            },
+            bf_time: {
+                required: true
+            },
+            bf_hours: {
+                required: true
+            },
+            bf_fullname: {
+                required: true
+            },
+            bf_email: {
+                required: true,
+                email: true
+            }
+
+        },
+        errorElement: "span",
+        errorClass: "error",
+        errorPlacement: function (error, element) {
+            error.insertBefore(element);
+        }
+    });
+
+    $(".next-btn1").click(function () {
+        if (v.form()) {
+            $(".tab-pane").hide();
+            $("#step2").fadeIn(1000);
+            $('.progressbar-dots').removeClass('active');
+            $('.progressbar-dots:nth-child(2)').addClass('active');
+        }
+    });
+    $(".next-btn2").click(function () {
+        if (v.form()) {
+            $(".tab-pane").hide();
+            $("#step3").fadeIn(1000);
+            $('.progressbar-dots').removeClass('active');
+            $('.progressbar-dots:nth-child(3)').addClass('active');
+        }
+    });
+
+    $(".submit-btn").click(function () {
+        if (v.form()) {
+            $("#loader").show();
+            setTimeout(function () {
+                $("#booking-form").html("<h2>Kurs Oluşturmaya Başlayalım!</h2>");
+            }, 1000);
+            return false;
+        }
+    });
+</script>

@@ -1,0 +1,106 @@
+﻿<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Admin.css" rel="stylesheet" />
+</head>
+<header role="banner">
+    <h1>BS</h1>
+    <ul class="utilities">
+        <br>
+        <li class="users"><a href="#"> @Session["kullaniciad"]</a></li>
+        <li class="logout warn"><a href="/Giris/AdminCikis">Çıkış Yap</a></li>
+    </ul>
+</header>
+
+<nav role='navigation'>
+    <ul class="main">
+        <li class="dashboard"><a href="/Admin/AdminAnasayfa">Yönetim Paneli</a></li>
+        <li class="users"><a href="#">Kullanıcılar</a></li>
+        <li class="write"><a href="#">Eğitmenler</a></li>
+        <li class="comments"><a href="#">Eğitimler</a></li>
+    </ul>
+</nav>
+
+<main role="main">
+
+    <section class="panel important">
+        <h2>Yönetim Paneli</h2>
+    </section>
+
+    <section class="panel important">
+        <table class="table table-bordered table table-hover" id="tablo">
+            <thead>
+                <tr>
+                    <th>Kullanici Ad</th>
+                    <th>Kullanici Sifre</th>
+                    <th>Kullanici Yetki Türü</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>kullaniciad</td>
+                    <td>kullanicisifre</td>
+                    <td>tblYetkiTur.yetkiturad</td>
+                    
+                </tr>
+
+                
+            </tbody>
+        </table>
+    </section>
+</main>
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+
+<script>
+    $('#tablo').DataTable({
+        language: {
+            info: "_TOTAL_ kayıttan _START_ - _END_ arasındaki kayıtlar gösteriliyor",
+            infoEmpty: "Hiç kayıt bulunamadı.",
+            loadingRecords: "Kayıtlar yükleniyor.",
+            zeroRecords: "Eşleşen bir kayıt bulunamadı.",
+            search: "Ara:",
+            infoFiltered: "(toplam _MAX_ kayıttan filtrelenenler)",
+            lengthMenu: "Sayfada _MENU_ kayıt göster",
+            buttons: {
+                copyTitle: "Panoya kopyalandı.",
+                copySuccess: "Panoya %d satır kopyalandı",
+                copy: "Kopyala",
+                print: "Yazdır",
+            },
+
+            paginate: {
+                first: "İlk",
+                previous: "Önceki",
+                next: "Sonraki",
+                last: "Son"
+            },
+        }
+    });
+    $(function () {
+        $('#tablo').on("click", ".btnKullaniciSil", function () {
+            var btn = $(this);
+            bootbox.confirm("Silmek istediğinize emin misiniz?", function (result) {
+                if (result) {
+                    var id = btn.data("id");
+                    $.ajax({
+                        type: "GET",
+                        url: "/OgrenciIsleri/KullaniciSil/" + id,
+                        success: function () {
+                            btn.parent().parent().remove();
+                        }
+                    }).fail(function () {
+                        bootbox.alert('Silmek istediğiniz eğitmenin ders kaydı bulunmaktadır.');
+
+                    });
+                }
+            })
+
+        });
+    });
+    $(document).ready(function () {
+        $(".close").click(function () {
+            $("#myAlert").alert("close");
+        });
+    });
+</script>

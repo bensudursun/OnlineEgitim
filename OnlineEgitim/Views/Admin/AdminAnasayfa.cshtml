@@ -3,7 +3,7 @@
     <link href="~/Content/Admin.css" rel="stylesheet" />
 </head>
 <header role="banner">
-    <h1>Yönetim Paneli</h1>
+    <h1>BS</h1>
     <ul class="utilities">
         <br>
         <li class="users"><a href="#"> @Session["kullaniciad"]</a></li>
@@ -13,37 +13,72 @@
 
 <nav role='navigation'>
     <ul class="main">
-        <li class="dashboard"><a href="admindashboard">Dashboard</a></li>
-        <li class="edit"><a href="#">Edit Website</a></li>
-        <li class="write"><a href="#">Write news</a></li>
-        <li class="comments"><a href="#">Ads</a></li>
-        <li class="users"><a href="#">Manage Users</a></li>
+        <li class="dashboard"><a href="/Admin/AdminAnasayfa">Yönetim Paneli</a></li>
+        <li class="users"><a href="#">Kullanıcılar</a></li>
+        <li class="write"><a href="#">Eğitmenler</a></li>
+        <li class="comments"><a href="#">Eğitimler</a></li>
     </ul>
 </nav>
 
 <main role="main">
 
     <section class="panel important">
-        <h2>Write Some News</h2>
-        <ul>
-            <li>Information Panel</li>
-        </ul>
+        <h2>Yönetim Paneli</h2>
+    
     </section>
 
     <section class="panel important">
-        <h2>Write a post</h2>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <div class="twothirds">
-                Blog title:<br />
-                <input type="text" name="title" size="40" /><br /><br />
-                Content:<br />
-                <textarea name="newstext" rows="15" cols="67"></textarea><br />
+      
+            <div class="container">
+                <div class="row">
+                    <div class="span3">
+                        <div class="widget navy-bg">
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <i class="icon icon-search icon-white"></i>
+                                </div>
+                                <div class="span8 text-right">
+                                    <h2 class="font-bold" style="color:white">
+                                        Kullanıcılar
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="widget lazur-bg">
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <i class="icon icon-search icon-white"></i>
+                                </div>
+                                <div class="span8 text-right">
+                                    <h2 class="font-bold" style="color:white">
+                                        Eğitmenler
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="widget yellow-bg">
+                            <div class="row-fluid">
+                                <div class="span4">
+                                    <i class="icon icon-search icon-white"></i>
+                                </div>
+                                <div class="span8 text-right">
+                                    <h2 class="font-bold" style="color:white">
+                                        Eğitimler
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
             </div>
-            <div>
-                <input type="submit" name="submit" value="Save" />
-            </div>
-            </div>
-        </form>
+        
+        
     </section>
 
 </main>

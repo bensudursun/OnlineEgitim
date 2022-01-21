@@ -30,5 +30,8 @@ namespace OnlineEgitim.Models
         public virtual DbSet<Yetki> Yetki { get; set; }
         public virtual DbSet<YetkiTur> YetkiTur { get; set; }
         public virtual DbSet<EgitimVeren> EgitimVeren { get; set; }
+        public virtual DbSet<Egitim> Egitim { get; set; }
+        public virtual DbSet<Kurs> Kurs { get; set; }
+        public virtual DbSet<Kategori> Kategori { get; set; }
     }
 }

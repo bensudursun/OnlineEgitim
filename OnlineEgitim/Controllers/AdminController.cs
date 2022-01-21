@@ -13,5 +13,10 @@ namespace OnlineEgitim.Controllers
         {
             return View();
         }
+
+        public ActionResult Kullanicilar()
+        {
+            return View();
+        }
     }
 }

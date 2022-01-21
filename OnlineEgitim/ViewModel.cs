@@ -10,5 +10,6 @@ namespace OnlineEgitim
     {
         public List<KullaniciBilgi> KullaniciBilgis { get; set; }
         public List<Kullanici> Kullanicis { get; set; }
+        public List<Kategori> Kategoris { get; set; }
     }
 }

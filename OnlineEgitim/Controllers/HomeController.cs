@@ -65,6 +65,26 @@ namespace OnlineEgitim.Controllers
             return View();
         }
 
+        public ActionResult EgitimVer()
+        {
+            ViewModel model = new ViewModel();
+            model.Kategoris = db.Kategori.ToList();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult EgitimVer(string egitimbasligi, int kategori, string aciklama)
+        {
+            Egitim egitim = new Egitim();
+            egitim.EgitimBasligi = egitimbasligi;
+            egitim.KategoriId = kategori;
+            egitim.Aciklama = aciklama;
+            db.Egitim.Add(egitim);
+            db.SaveChanges();
+            return RedirectToAction("Anasayfa", "Home");
+        }
+
         [HttpPost]
         public ActionResult EgitmenBasvuru(EgitimVeren egitimveren)
         {

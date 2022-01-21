@@ -20,6 +20,8 @@ namespace OnlineEgitim.Models
             this.KullaniciBilgi = new HashSet<KullaniciBilgi>();
             this.Yetki = new HashSet<Yetki>();
             this.EgitimVeren = new HashSet<EgitimVeren>();
+            this.Egitim = new HashSet<Egitim>();
+            this.Kurs = new HashSet<Kurs>();
         }
     
         public int KullaniciId { get; set; }
@@ -35,5 +37,9 @@ namespace OnlineEgitim.Models
         public virtual ICollection<Yetki> Yetki { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EgitimVeren> EgitimVeren { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Egitim> Egitim { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Kurs> Kurs { get; set; }
     }
 }
