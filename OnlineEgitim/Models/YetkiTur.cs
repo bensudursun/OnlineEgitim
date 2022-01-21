@@ -17,15 +17,12 @@ namespace OnlineEgitim.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public YetkiTur()
         {
-            this.Kullanici = new HashSet<Kullanici>();
             this.Yetki = new HashSet<Yetki>();
         }
     
         public int YetkiTurId { get; set; }
         public string YetkiTurAd { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Kullanici> Kullanici { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Yetki> Yetki { get; set; }
     }

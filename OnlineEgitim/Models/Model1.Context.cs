@@ -13,10 +13,10 @@ namespace OnlineEgitim.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class OnlineEgitimEntities1 : DbContext
+    public partial class OnlineEgitimEntities2 : DbContext
     {
-        public OnlineEgitimEntities1()
-            : base("name=OnlineEgitimEntities1")
+        public OnlineEgitimEntities2()
+            : base("name=OnlineEgitimEntities2")
         {
         }
     
@@ -26,7 +26,9 @@ namespace OnlineEgitim.Models
         }
     
         public virtual DbSet<Kullanici> Kullanici { get; set; }
+        public virtual DbSet<KullaniciBilgi> KullaniciBilgi { get; set; }
         public virtual DbSet<Yetki> Yetki { get; set; }
         public virtual DbSet<YetkiTur> YetkiTur { get; set; }
+        public virtual DbSet<EgitimVeren> EgitimVeren { get; set; }
     }
 }

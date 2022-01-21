@@ -17,19 +17,23 @@ namespace OnlineEgitim.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Kullanici()
         {
+            this.KullaniciBilgi = new HashSet<KullaniciBilgi>();
             this.Yetki = new HashSet<Yetki>();
+            this.EgitimVeren = new HashSet<EgitimVeren>();
         }
     
         public int KullaniciId { get; set; }
         public string Kullaniciadi { get; set; }
         public string Sifre { get; set; }
-        public Nullable<int> YetkiTurId { get; set; }
         public Nullable<int> EgitmenId { get; set; }
         public Nullable<int> OgrenciId { get; set; }
         public Nullable<int> AdminId { get; set; }
     
-        public virtual YetkiTur YetkiTur { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KullaniciBilgi> KullaniciBilgi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Yetki> Yetki { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EgitimVeren> EgitimVeren { get; set; }
     }
 }

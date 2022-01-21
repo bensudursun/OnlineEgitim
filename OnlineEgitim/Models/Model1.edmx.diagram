@@ -4,13 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1733f264f6284006b3f549d8013fb71d" Name="Diagram1">
-        <EntityTypeShape EntityType="OnlineEgitimModel.Kullanici" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnlineEgitimModel.Yetki" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnlineEgitimModel.YetkiTur" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <AssociationConnector Association="OnlineEgitimModel.FK_Table_1_YetkiTur" ManuallyRouted="false" />
+      <Diagram DiagramId="777f5162bc134d2ab496fad1c65d866f" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineEgitimModel.Kullanici" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.KullaniciBilgi" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.Yetki" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.YetkiTur" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_KullaniciBilgi_Kullanici" ManuallyRouted="false" />
         <AssociationConnector Association="OnlineEgitimModel.FK_Yetki_Table_1" ManuallyRouted="false" />
         <AssociationConnector Association="OnlineEgitimModel.FK_Yetki_YetkiTur" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.EgitimVeren" Width="1.5" PointX="3" PointY="7.125" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_EgitimVeren_Kullanici" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
