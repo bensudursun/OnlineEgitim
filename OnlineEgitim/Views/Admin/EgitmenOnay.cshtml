@@ -1,0 +1,46 @@
+﻿<head>
+    <link href="~/Content/Admin.css" rel="stylesheet" />
+</head>
+<header role="banner">
+    <h1>BS</h1>
+    <ul class="utilities">
+        <br>
+        <li class="users"><a href="/Admin/AdminProfil"> @Session["kullaniciad"]</a></li>
+        <li class="logout warn"><a href="/Giris/AdminCikis">Çıkış Yap</a></li>
+    </ul>
+</header>
+
+<nav role='navigation'>
+    <ul class="main">
+        <li class="dashboard"><a href="/Admin/AdminAnasayfa">Yönetim Paneli</a></li>
+        <li class="users"><a href="/Admin/Kullanicilar">Kullanıcılar</a></li>
+        <li class="write"><a href="/Admin/Egitmenler">Eğitmenler</a></li>
+        <li class="write"><a href="/Admin/EgitmenBasvuru">Basvurular</a></li>
+        <li class="comments"><a href="/Admin/Egitimler">Eğitimler</a></li>
+    </ul>
+</nav>
+
+<main role="main">
+
+    <section class="panel important">
+        <h2>Yönetim Paneli</h2>
+    </section>
+
+    <section class="panel important">
+        <div class="container">
+            <div class="row">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Başvuru Seçiniz</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>  <select class="form-select" aria-label="Default select example">
+                    <option selected>Başvurusu onaylanacak kullanıcıyı seçiniz</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+        </div>
+    </section>
+</main>

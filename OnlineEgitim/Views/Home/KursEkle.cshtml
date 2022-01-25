@@ -1,0 +1,82 @@
+﻿@model ViewModel
+@{
+    ViewBag.Title = "EgitimVer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link href="~/Content/egitimver.css" rel="stylesheet" />
+    <style>
+        .ek {
+            background: #82CCC8;
+            padding: 13px 20px;
+            color: #fff;
+            font-family: oswald, sans-serif;
+            text-transform: uppercase;
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: 1px;
+            min-width: 400px;
+            display: inline-block;
+            text-align: center;
+            font-weight: 400;
+            border-radius: 0;
+            border: 0;
+            transition-property: background-color;
+            width: 100%;
+            cursor: pointer;
+        }
+
+            .ek:hover {
+                background-color: #444b5d;
+                color: #fff;
+            }
+    </style>
+</head>
+<div class="container">
+    @using (Html.BeginForm("KursEkle", "Home", FormMethod.Post))
+    {
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Kurs Başlık</label>
+            <input name="kursbaslik" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Açıklama</label>
+            <textarea name="aciklama" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+
+            <select name="kategori" class="form-select" aria-label="Default select example">
+                <option selected>Kategori</option>
+                @foreach (var o in Model.Kategoris)
+                {
+                    <option value="@o.KategoriId">@o.Kategoriad</option>
+
+                }
+            </select>
+        </div>
+        <div class="mb-3">
+            <select name="dil" class="form-select" aria-label="Default select example">
+                <option selected>Dil</option>
+                <option value="Türkçe">Türkçe</option>
+                <option value="İngilizce">İngilizce</option>
+            </select>
+        </div>
+        <div class="mb-3">
+
+            <select name="duzey" class="form-select" aria-label="Default select example">
+                <option selected>Düzey</option>
+                <option value="Temel Seviye">Temel Seviye</option>
+                <option value="Orta Seviye">Orta Seviye</option>
+                <option value="İleri Seviye">İleri Seviye</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Kurs Görüntüsü</label>
+            <input name="kursgoruntu" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">Görüntü linkini ekleyiniz.</div>
+        </div>
+    
+        <button class="ek" type="submit">Devam</button>
+    }
+
+</div>

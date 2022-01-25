@@ -6,7 +6,7 @@
     <h1>BS</h1>
     <ul class="utilities">
         <br>
-        <li class="users"><a href="#"> @Session["kullaniciad"]</a></li>
+        <li class="users"><a href="/Admin/AdminProfil"> @Session["kullaniciad"]</a></li>
         <li class="logout warn"><a href="/Giris/AdminCikis">Çıkış Yap</a></li>
     </ul>
 </header>
@@ -14,9 +14,10 @@
 <nav role='navigation'>
     <ul class="main">
         <li class="dashboard"><a href="/Admin/AdminAnasayfa">Yönetim Paneli</a></li>
-        <li class="users"><a href="#">Kullanıcılar</a></li>
-        <li class="write"><a href="#">Eğitmenler</a></li>
-        <li class="comments"><a href="#">Eğitimler</a></li>
+        <li class="users"><a href="/Admin/Kullanicilar">Kullanıcılar</a></li>
+        <li class="write"><a href="/Admin/Egitmenler">Eğitmenler</a></li>
+        <li class="write"><a href="/Admin/EgitmenBasvuru">Basvurular</a></li>
+        <li class="comments"><a href="/Admin/Egitimler">Eğitimler</a></li>
     </ul>
 </nav>
 
@@ -24,11 +25,10 @@
 
     <section class="panel important">
         <h2>Yönetim Paneli</h2>
-    
-    </section>
 
-    <section class="panel important">
-      
+    </section>
+   
+        <section class="panel important">
             <div class="container">
                 <div class="row">
                     <div class="span3">
@@ -73,12 +73,10 @@
                             </div>
                         </div>
                     </div>
-                    
-                </div>
-                
-            </div>
-        
-        
-    </section>
 
-</main>
+                </div>
+
+            </div>
+        </section>
+
+    </main>

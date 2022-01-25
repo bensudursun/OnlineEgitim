@@ -23,6 +23,7 @@ namespace OnlineEgitim.Models
         public string Hakkimda { get; set; }
         public Nullable<int> kullaniciid { get; set; }
         public string Soyad { get; set; }
+        public Nullable<bool> OnayliMi { get; set; }
     
         public virtual Kullanici Kullanici { get; set; }
     }

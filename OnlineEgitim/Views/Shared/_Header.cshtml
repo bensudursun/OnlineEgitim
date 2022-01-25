@@ -22,35 +22,38 @@
     </symbol>
 </svg>
 
-@{
-    int x = 1;
-}
 @if ((Session["yetkiid"] != null)
 )
 {
     <div class="container">
         <header class="d-flex flex-wrap justify-content-center  mb-4 pb-3 border-bottom">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap" /></svg>
-                <span class="fs-4">Eğitim Sistemi</span>
+            <a href="/Home/Anasayfa" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <span class="fs-4"><b>BS</b> Eğitim</span>
             </a>
             <form class="col-md-12 col-sm-6 col-xs-6 col-lg-auto mb-3 mb-lg-0 me-lg-3 w-25">
                 <input type="search" class="form-control" placeholder="Ara..." aria-label="Search">
             </form>
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Anasayfa</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Eğitimlerim</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Eğitim ver</a></li>
-            </ul>
+                <li class="nav-item"><a href="/Home/Anasayfa" class="nav-link active" aria-current="page">Anasayfa</a></li>
+                @if (Convert.ToBoolean(Session["egitimverenonay"]) == true || Convert.ToInt32( Session["yetkiturid"]) == 2)
+                {
+                    <li class="nav-item"><a href="/Home/Egitimlerim" class="nav-link">Eğitimlerim</a></li>
+                }
+                    <li class="nav-item"><a href="/Home/EgitmenBasvuru" class="nav-link">Eğitim ver</a></li>
+                </ul>
 
             <div class="dropdown text-end">
                 <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" alt="mdo" width="32" height="32" class="rounded-circle">    @Session["kullaniciad"]
                 </a>
                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                    <li><a class="dropdown-item" href="#">Eğitimlerim</a></li>
-                    <li><a class="dropdown-item" href="#">Eğitim Verin</a></li>
-                    <li><a class="dropdown-item" href="#">Profilim</a></li>
+                    @if (Convert.ToBoolean(Session["egitimverenonay"]) == true  )
+                    {
+                        <li><a class="dropdown-item" href="/Home/Egitimlerim">Eğitimlerim</a></li>
+
+                    }
+                    <li class="nav-item"><a href="/Home/EgitmenBasvuru" class="nav-link">Eğitim ver</a></li>
+                    <li><a class="dropdown-item" href="/Home/Profil">Profilim</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><button class="dropdown-item" onclick="window.location.href='/Giris/Cikis'">Çıkış Yap</button></li>
                 </ul>
@@ -63,20 +66,19 @@ else
 {
     <div class="container">
         <header class="d-flex flex-wrap justify-content-center  mb-4 pb-3 border-bottom">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap" /></svg>
-                <span class="fs-4">Eğitim Sistemi</span>
+            <a href="/Home/Anasayfa" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <span class="fs-4"><b>BS</b> Eğitim</span>
             </a>
             <form class="col-md-12 col-sm-6 col-xs-6 col-lg-auto mb-3 mb-lg-0 me-lg-3 w-25">
                 <input type="search" class="form-control" placeholder="Ara..." aria-label="Search">
             </form>
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Anasayfa</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Eğitim ver</a></li>
+                <li class="nav-item"><a href="/Home/Anasayfa" class="nav-link active" aria-current="page">Anasayfa</a></li>
+                <li class="nav-item"><a href="/Home/EgitmenBasvuru" class="nav-link">Eğitim ver</a></li>
             </ul>
 
-            <button type="button" class="btn btn-outline-primary me-2">Login</button>
-            <button type="button" class="btn btn-primary">Sign-up</button>
+            <button onclick="location.href = '@Url.Action("GirisYap", "Giris")'" type="button" class="btn btn-outline-primary me-2">Login</button>
+            <button onclick="location.href = '@Url.Action("GirisYap", "Giris")'" type="button" class="btn btn-primary">Sign-up</button>
         </header>
     </div>
 }

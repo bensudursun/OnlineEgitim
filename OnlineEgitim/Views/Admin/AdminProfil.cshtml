@@ -1,0 +1,129 @@
+﻿@model ViewModel
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <link href="~/Content/Admin.css" rel="stylesheet" />
+    <style>
+        .avatar {
+            vertical-align: middle;
+            width: 250px;
+            height: 160px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<header role="banner">
+    <h1>BS</h1>
+    <ul class="utilities">
+        <br>
+        <li class="users"><a href="#"> @Session["kullaniciad"]</a></li>
+        <li class="logout warn"><a href="/Giris/AdminCikis">Çıkış Yap</a></li>
+    </ul>
+</header>
+
+<nav role='navigation'>
+    <ul class="main">
+        <li class="dashboard"><a href="/Admin/AdminAnasayfa">Yönetim Paneli</a></li>
+        <li class="users"><a href="/Admin/Kullanicilar">Kullanıcılar</a></li>
+        <li class="write"><a href="/Admin/Egitmenler">Eğitmenler</a></li>
+        <li class="write"><a href="/Admin/EgitmenBasvuru">Basvurular</a></li>
+        <li class="comments"><a href="/Admin/Egitimler">Eğitimler</a></li>
+    </ul>
+</nav>
+
+<main role="main">
+
+    <section class="panel important">
+        <h2>Yönetim Paneli</h2>
+    </section>
+
+    <section class="panel important">
+
+        <div class="d-flex align-items-start ms-5 mt-4">
+            <div class="nav flex-column nav-pills ms-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <img class="avatar" src="~/Content/img/207-2074624_white-gray-circle-avatar-png-transparent-png-removebg-preview.png" />
+
+                @if (Model.KullaniciBilgis == null || Model.KullaniciBilgis != null)
+                {
+                    foreach (var o in Model.KullaniciBilgis)
+                    {
+                        if (Convert.ToInt32(Session["kullanicid"]) == o.kullaniciid)
+
+                        {
+
+                            <h3 style="text-align:center"> @o.ad &nbsp; @o.soyad </h3><br />
+
+                            <h4 style="text-align:center"> @o.email &nbsp; @o.telefon </h4><br />
+
+                            <h6 style="text-align:center"> @o.dogumtarihi </h6><br />
+
+                            <h6 style="text-align:center"> @o.linkednprof </h6><br />
+                        }
+                    }
+                }
+
+            </div>
+
+            <div class="tab-content " id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <div class="container  w-100 mb-5 ">
+
+                        <div class="container">
+
+                            <div class="col-md-12">
+
+                                <div class="card mb-5 baslik">
+                                    <div class="card-body">
+                                        <h5 style="color:#ff685f; text-align:center"> Kendiniz hakkında bilgiler ekleyin</h5>
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    @using (Html.BeginForm("AdminProfil", "Admin", FormMethod.Post))
+                                    {
+
+                                        <div class="row g-3">
+                                            <div class="col-md-12 ">
+                                                <label for="inputEmail4" class="form-label input">Ad</label>
+                                                <input name="ad" style="background-color: #fbfbfb; border: solid 1px #e6e6e6; border-radius: 6px;" type="text" class="form-control" id="inputEmail4">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label for="inputPassword4" class="form-label">Soyad</label>
+                                                <input name="soyad" style="background-color: #fbfbfb; border: solid 1px #e6e6e6; border-radius: 6px;" type="text" class="form-control" id="inputPassword4">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label for="inputAddress" class="form-label">E-Mail</label>
+                                                <input name="email" style="background-color: #fbfbfb; border: solid 1px #e6e6e6; border-radius: 6px;" type="text" class="form-control" id="inputAddress">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label for="inputAddress2" class="form-label">Cep Telefonu </label>
+                                                <input name="telefon" style="background-color: #fbfbfb; border: solid 1px #e6e6e6; border-radius: 6px;" type="text" class="form-control" id="inputAddress2">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlInput1">Doğum Tarihi</label>
+                                                    <input class="datefield" data-val="true" data-val-required="Date is required"
+                                                           id="ReleaseDate" name="dogumtarihi" type="datetime-local" value="1/11/2021" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-text">http://www.linkedin.com/</div>
+                                                    <input name="linkednprof" style="background-color: #fbfbfb; border: solid 1px #e6e6e6; border-radius: 6px;" type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Linkedin Profili">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <button class="w-100 btn btn-lg  mt-4 btnhover" style=" border-color: #ff685f;" type="submit">KAYDET</button>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>

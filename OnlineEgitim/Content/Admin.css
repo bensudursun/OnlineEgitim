@@ -609,6 +609,1747 @@ td {
 }
 
 
+section.impact-list ul li strong span, section.key-ingredients-list ul li strong span {
+    color: #232323;
+    font-family: "360-Regular",sans-serif;
+    font-size: 10rem;
+    letter-spacing: -0.3125rem;
+    text-align: center
+}
+
+*/
+/*---------*/
+@media screen and (max-width:41.6875rem) {
+    section .impact-list ul li strong span,section.key-ingredients-list ul li strong span
+
+{
+    font-size: 8.75rem
+}
+
+}
+
+.about-doing-good .testimonial-section header p {
+    font-family: "360-Regular",sans-serif;
+    font-size: 3.125rem;
+    line-height: 1
+}
+
+@media screen and (max-width:41.6875rem) {
+    .about-doing-good .testimonial-section header p {
+        font-size: 1.5625rem
+    }
+}
+
+.work__title, .unsupported h1, .contact-page .join-the-team__blurb h2 {
+    font-family: "360-Bold",sans-serif;
+    font-size: 6.25rem;
+    font-weight: normal;
+    line-height: 1
+}
+
+@media screen and (max-width:64rem) {
+    .work__title, .unsupported h1, .contact-page .join-the-team__blurb h2 {
+        font-size: 4.375rem
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    .work__title, .unsupported h1, .contact-page .join-the-team__blurb h2 {
+        font-size: 3.125rem
+    }
+}
+
+section.home-page .carousel__tagline, section.home-page .carousel__detail {
+    font-family: "360-Bold",sans-serif;
+    font-size: 4.6875rem;
+    font-weight: normal;
+    line-height: 1
+}
+
+@media screen and (max-width:50rem) {
+    section.home-page .carousel__tagline, section.home-page .carousel__detail {
+        font-size: 2.3125rem
+    }
+}
+
+.press .featured li .big, .work__details, section.col-layout-2-8 .content .biggest, .contact-page .contact-us__success-blurb h2 {
+    font-family: "360-Bold",sans-serif;
+    font-size: 3.75rem;
+    font-weight: normal;
+    line-height: 1
+}
+
+@media screen and (max-width:41.6875rem) {
+    .press .featured li .big, .work__details, section.col-layout-2-8 .content .biggest, .contact-page .contact-us__success-blurb h2 {
+        font-size: 1.875rem
+    }
+}
+
+.work__client, .contact-page .join-the-team__blurb, .error-page .lead-hero__header .error-message {
+    font-family: "360-Regular",sans-serif;
+    font-size: 2.5rem
+}
+
+@media screen and (max-width:41.6875rem) {
+    .work__client, .contact-page .join-the-team__blurb, .error-page .lead-hero__header .error-message {
+        font-size: 1.25rem
+    }
+}
+
+section.col-layout-2-8 header, main section.capabilities-landing .lead-info article header, .contact-page .form__selector.replaced-select .replaced-select-list li, .contact-page .form__selector.replaced-select .select-trigger {
+    font-family: "360-Bold",sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 1.2
+}
+
+*/
+body, section.col-layout-2-8 .content, main section.work-detail .lead-info article, main section.work-detail .work-detail-media-list li .info, main section.capabilities-landing .lead-info article, main section.about-landing .leadership-popups article .description .content, .error-page .lead-hero__header .recourse {
+    font-family: "360-Regular",sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6
+}
+
+@media screen and (max-width:41.6875rem) {
+    body, section.col-layout-2-8 .content, main section.work-detail .lead-info article, main section.work-detail .work-detail-media-list li .info, main section.capabilities-landing .lead-info article, main section.about-landing .leadership-popups article .description .content, .error-page .lead-hero__header .recourse {
+        font-size: 0.9375rem;
+        line-height: 1.4
+    }
+}
+
+body b, section.col-layout-2-8 .content b, main section.work-detail .lead-info article b, main section.work-detail .work-detail-media-list li .info b, main section.capabilities-landing .lead-info article b, main section.about-landing .leadership-popups article .description .content b, .error-page .lead-hero__header .recourse b, body strong, section.col-layout-2-8 .content strong, main section.work-detail .lead-info article strong, main section.work-detail .work-detail-media-list li .info strong, main section.capabilities-landing .lead-info article strong, main section.about-landing .leadership-popups article .description .content strong, .error-page .lead-hero__header .recourse strong {
+    font-family: "360-Bold",sans-serif;
+    font-weight: normal
+}
+
+.awards-list ul li div span, section.impact-list ul li p:last-child, section.key-ingredients-list ul li p:last-child, main section.work-detail .social-quotes ul li section footer {
+    font-family: "360-Regular",sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.225rem;
+    line-height: 1.1;
+    text-align: center
+}
+
+@media screen and (max-width:41.6875rem) {
+    .awards-list ul li div span, section.impact-list ul li p:last-child, section.key-ingredients-list ul li p:last-child, main section.work-detail .social-quotes ul li section footer {
+        font-size: 0.75rem;
+        letter-spacing: 0.1875rem
+    }
+}
+
+.page-footer nav .links {
+    font-family: "360-Regular",sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    line-height: 1.7;
+    text-align: center;
+    text-transform: uppercase
+}
+
+.masthead > nav > ul > li ul, .masthead {
+    font-family: "360-Regular",sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    line-height: 2.5;
+    text-align: center;
+    text-transform: uppercase
+}
+
+    .masthead > nav > ul > li ul {
+        font-family: "360-Bold",sans-serif;
+        font-size: 6.25rem;
+        font-weight: normal;
+        line-height: 1.1;
+        text-align: left;
+        text-transform: capitalize
+    }
+
+.our-clients, section.work-together, section.home-page .hero, section.home-page .pro-bono, section.home-page .our-clients, section.work-landing .our-work, .contact-page, .about-doing-good .featured-work-section, .voiceplaybook-page, .vendorioterms-page {
+    max-width: 100%;
+    width: 100%
+}
+
+
+
+    .awards-list > header > p, .press > header > p, section.home-page .pro-bono > header > p, section.work-landing .our-work > header > p, .contact-page .contact-us > header > p, .contact-page .join-the-team > header > p, .contact-page .offices > header > p, .about-awards .all-awards-list > header > p, .about-doing-good .testimonial-section > header > p, .about-doing-good .featured-work-section > header > p, .about-doing-good .side-tab-section > header > p, main section.about-landing .philosophy > header > p, main section.about-landing .key-ingredients-list > header > p, main section.about-landing .awards > header > p, main section.about-landing .our-offices > header > p, main section.about-landing .our-history > header > p, main section.about-landing .leadership > header > p, .voiceplaybook-page .voiceplaybook > header > p, .vendorioterms-page .vendorioterms > header > p, .lead-hero header, .short-hero header, section.work-cards, .our-clients > div, .awards-list > div, .featured-work, section.social-quotes, .page-footer nav, .page-footer .copyright, .work-landing-lead-hero-vimeo-overlay > div, main section.work-detail .how > div, main section.work-detail .our-summary > div, main section.work-detail .press > div, main section.work-detail .lead-hero header, main section.work-detail .short-hero header, main section.work-detail .lead-info, main section.work-detail .lead-media > div, main section.work-detail .social-graphic, main section.work-detail .work-detail-media-list li .info, main section.work-detail .work-detail-media-list.instagram, main section.capabilities-landing .lead-info, main section.capabilities-landing .capabilities-list, main section.capabilities-detail .lead-info, main section.capabilities-detail .services-list > div, .contact-page .join-the-team__blurb, .about-doing-good .side-tab-section > div, main section.about-landing nav .wrap > div, main section.about-landing .philosophy > div, main section.about-landing .doing-good .content > div, main section.about-landing .awards > div, main section.about-landing .our-offices > div, main section.about-landing .our-history > div, main section.about-landing .leadership-popups article, main section.work-detail.txd .media > div, main section.work-detail.txd .media .work-detail-media-list li > .graphic, main section.work-detail.txd .lead-hero header, main section.work-detail.txd .short-hero header, main section.work-detail.txd .lead-media > div {
+        margin: 0 auto;
+        max-width: 1200px
+    }
+
+@media screen and (min-width:75rem) {
+    .awards-list > header > p, .press > header > p, section.home-page .pro-bono > header > p, section.work-landing .our-work > header > p, .contact-page .contact-us > header > p, .contact-page .join-the-team > header > p, .contact-page .offices > header > p, .about-awards .all-awards-list > header > p, .about-doing-good .testimonial-section > header > p, .about-doing-good .featured-work-section > header > p, .about-doing-good .side-tab-section > header > p, main section.about-landing .philosophy > header > p, main section.about-landing .key-ingredients-list > header > p, main section.about-landing .awards > header > p, main section.about-landing .our-offices > header > p, main section.about-landing .our-history > header > p, main section.about-landing .leadership > header > p, .voiceplaybook-page .voiceplaybook > header > p, .vendorioterms-page .vendorioterms > header > p, .lead-hero header, .short-hero header, section.work-cards, .our-clients > div, .awards-list > div, .featured-work, section.social-quotes, .page-footer nav, .page-footer .copyright, .work-landing-lead-hero-vimeo-overlay > div, main section.work-detail .how > div, main section.work-detail .our-summary > div, main section.work-detail .press > div, main section.work-detail .lead-hero header, main section.work-detail .short-hero header, main section.work-detail .lead-info, main section.work-detail .lead-media > div, main section.work-detail .social-graphic, main section.work-detail .work-detail-media-list li .info, main section.work-detail .work-detail-media-list.instagram, main section.capabilities-landing .lead-info, main section.capabilities-landing .capabilities-list, main section.capabilities-detail .lead-info, main section.capabilities-detail .services-list > div, .contact-page .join-the-team__blurb, .about-doing-good .side-tab-section > div, main section.about-landing nav .wrap > div, main section.about-landing .philosophy > div, main section.about-landing .doing-good .content > div, main section.about-landing .awards > div, main section.about-landing .our-offices > div, main section.about-landing .our-history > div, main section.about-landing .leadership-popups article, main section.work-detail.txd .media > div, main section.work-detail.txd .media .work-detail-media-list li > .graphic, main section.work-detail.txd .lead-hero header, main section.work-detail.txd .short-hero header, main section.work-detail.txd .lead-media > div {
+        width: 100%
+    }
+}
+
+*/
+
+/*--------- work --*/
+/*
+@media screen and (min-width:50rem) {
+ .awards-list>header>p,.press>header>p,section.home-page .pro-bono>header>p,section.work-landing .our-work>header>p,.contact-page .contact-us>header>p,.contact-page .join-the-team>header>p,.contact-page .offices>header>p,.about-awards .all-awards-list>header>p,.about-doing-good .testimonial-section>header>p,.about-doing-good .featured-work-section>header>p,.about-doing-good .side-tab-section>header>p,main section.about-landing .philosophy>header>p,main section.about-landing .key-ingredients-list>header>p,main section.about-landing .awards>header>p,main section.about-landing .our-offices>header>p,main section.about-landing .our-history>header>p,main section.about-landing .leadership>header>p,.voiceplaybook-page .voiceplaybook>header>p,.vendorioterms-page .vendorioterms>header>p,.lead-hero header,.short-hero header,section.work-cards,.our-clients>div,.awards-list>div,.featured-work,section.social-quotes,.page-footer nav,.page-footer .copyright,.work-landing-lead-hero-vimeo-overlay>div,main section.work-detail .how>div,main section.work-detail .our-summary>div,main section.work-detail .press>div,main section.work-detail .lead-hero header,main section.work-detail .short-hero header,main section.work-detail .lead-info,main section.work-detail .lead-media>div,main section.work-detail .social-graphic,main section.work-detail .work-detail-media-list li .info,main section.work-detail .work-detail-media-list.instagram,main section.capabilities-landing .lead-info,main section.capabilities-landing .capabilities-list,main section.capabilities-detail .lead-info,main section.capabilities-detail .services-list>div,.contact-page .join-the-team__blurb,.about-doing-good .side-tab-section>div,main section.about-landing nav .wrap>div,main section.about-landing .philosophy>div,main section.about-landing .doing-good .content>div,main section.about-landing .awards>div,main section.about-landing .our-offices>div,main section.about-landing .our-history>div,main section.about-landing .leadership-popups article,main section.work-detail.txd .media>div,main section.work-detail.txd .media .work-detail-media-list li>.graphic,main section.work-detail.txd .lead-hero header,main section.work-detail.txd .short-hero header,main section.work-detail.txd .lead-media>div {
+  width:90%
+ }
+  */
+
+}
+
+@media screen and (max-width:50rem) {
+    .awards-list > header > p, .press > header > p, section.home-page .pro-bono > header > p, section.work-landing .our-work > header > p, .contact-page .contact-us > header > p, .contact-page .join-the-team > header > p, .contact-page .offices > header > p, .about-awards .all-awards-list > header > p, .about-doing-good .testimonial-section > header > p, .about-doing-good .featured-work-section > header > p, .about-doing-good .side-tab-section > header > p, main section.about-landing .philosophy > header > p, main section.about-landing .key-ingredients-list > header > p, main section.about-landing .awards > header > p, main section.about-landing .our-offices > header > p, main section.about-landing .our-history > header > p, main section.about-landing .leadership > header > p, .voiceplaybook-page .voiceplaybook > header > p, .vendorioterms-page .vendorioterms > header > p, .lead-hero header, .short-hero header, section.work-cards, .our-clients > div, .awards-list > div, .featured-work, section.social-quotes, .page-footer nav, .page-footer .copyright, .work-landing-lead-hero-vimeo-overlay > div, main section.work-detail .how > div, main section.work-detail .our-summary > div, main section.work-detail .press > div, main section.work-detail .lead-hero header, main section.work-detail .short-hero header, main section.work-detail .lead-info, main section.work-detail .lead-media > div, main section.work-detail .social-graphic, main section.work-detail .work-detail-media-list li .info, main section.work-detail .work-detail-media-list.instagram, main section.capabilities-landing .lead-info, main section.capabilities-landing .capabilities-list, main section.capabilities-detail .lead-info, main section.capabilities-detail .services-list > div, .contact-page .join-the-team__blurb, .about-doing-good .side-tab-section > div, main section.about-landing nav .wrap > div, main section.about-landing .philosophy > div, main section.about-landing .doing-good .content > div, main section.about-landing .awards > div, main section.about-landing .our-offices > div, main section.about-landing .our-history > div, main section.about-landing .leadership-popups article, main section.work-detail.txd .media > div, main section.work-detail.txd .media .work-detail-media-list li > .graphic, main section.work-detail.txd .lead-hero header, main section.work-detail.txd .short-hero header, main section.work-detail.txd .lead-media > div {
+        width: 89%
+    }
+}
+/*
+.awards-list>p,.press>p,section.home-page .pro-bono>p,section.work-landing .our-work>p,.contact-page .contact-us>p,.contact-page .join-the-team>p,.contact-page .offices>p,.about-awards .all-awards-list>p,.about-doing-good .testimonial-section>p,.about-doing-good .featured-work-section>p,.about-doing-good .side-tab-section>p,main section.about-landing .philosophy>p,main section.about-landing .key-ingredients-list>p,main section.about-landing .awards>p,main section.about-landing .our-offices>p,main section.about-landing .our-history>p,main section.about-landing .leadership>p,.voiceplaybook-page .voiceplaybook>p,.vendorioterms-page .vendorioterms>p,.our-clients p,.unsupported,section.home-page .our-clients p,main section.about-landing .philosophy .text,main section.about-landing .awards>header p {
+ margin-left:auto;
+ margin-right:auto;
+ max-width:600px
+}
+*/
+@media screen and (max-width:50rem) {
+    .awards-list > p, .press > p, section.home-page .pro-bono > p, section.work-landing .our-work > p, .contact-page .contact-us > p, .contact-page .join-the-team > p, .contact-page .offices > p, .about-awards .all-awards-list > p, .about-doing-good .testimonial-section > p, .about-doing-good .featured-work-section > p, .about-doing-good .side-tab-section > p, main section.about-landing .philosophy > p, main section.about-landing .key-ingredients-list > p, main section.about-landing .awards > p, main section.about-landing .our-offices > p, main section.about-landing .our-history > p, main section.about-landing .leadership > p, .voiceplaybook-page .voiceplaybook > p, .vendorioterms-page .vendorioterms > p, .our-clients p, .unsupported, section.home-page .our-clients p, main section.about-landing .philosophy .text, main section.about-landing .awards > header p {
+        width: 75%
+    }
+}
+/*
+section.home-page .pro-bono header>.pro-bono__blurb,section.home-page .hero__carousel,.contact-page .contact-us>header>p,.contact-page .contact-us__form,.contact-page .contact-us__success-blurb,.about-doing-good .testimonial-section .content,.about-doing-good .testimonial-section header p,.privacy-policy .privacy-policy__content>div {
+ margin-left:auto;
+ margin-right:auto;
+ max-width:800px
+}
+
+@media screen and (max-width:50rem) {
+ section.home-page .pro-bono header>.pro-bono__blurb,section.home-page .hero__carousel,.contact-page .contact-us>header>p,.contact-page .contact-us__form,.contact-page .contact-us__success-blurb,.about-doing-good .testimonial-section .content,.about-doing-good .testimonial-section header p,.privacy-policy .privacy-policy__content>div {
+  width:80%
+ }
+}
+.privacy-policy .privacy-policy__content {
+ margin-left:auto;
+ margin-right:auto;
+ max-width:900px
+}
+@media screen and (max-width:50rem) {
+ .privacy-policy .privacy-policy__content {
+  width:85%
+ }
+}*/
+section.work-cards article, section.work-cards article .content {
+    position: relative
+}
+
+    section.work-cards article:before, section.work-cards article .content:before {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+        width: 100%
+    }
+
+.awards-list, .press, section.home-page .pro-bono, section.work-landing .our-work, .contact-page .contact-us, .contact-page .join-the-team, .contact-page .offices, .about-awards .all-awards-list, .about-doing-good .testimonial-section, .about-doing-good .featured-work-section, .about-doing-good .side-tab-section, main section.about-landing .philosophy, main section.about-landing .key-ingredients-list, main section.about-landing .awards, main section.about-landing .our-offices, main section.about-landing .our-history, main section.about-landing .leadership, .voiceplaybook-page .voiceplaybook, .vendorioterms-page .vendorioterms {
+    padding: 5.8125rem 0 6.875rem
+}
+
+@media screen and (max-width:50rem) {
+    .awards-list, .press, section.home-page .pro-bono, section.work-landing .our-work, .contact-page .contact-us, .contact-page .join-the-team, .contact-page .offices, .about-awards .all-awards-list, .about-doing-good .testimonial-section, .about-doing-good .featured-work-section, .about-doing-good .side-tab-section, main section.about-landing .philosophy, main section.about-landing .key-ingredients-list, main section.about-landing .awards, main section.about-landing .our-offices, main section.about-landing .our-history, main section.about-landing .leadership, .voiceplaybook-page .voiceplaybook, .vendorioterms-page .vendorioterms {
+        padding: 2.8125rem 0 3.4375rem
+    }
+}
+
+.awards-list > p, .press > p, section.home-page .pro-bono > p, section.work-landing .our-work > p, .contact-page .contact-us > p, .contact-page .join-the-team > p, .contact-page .offices > p, .about-awards .all-awards-list > p, .about-doing-good .testimonial-section > p, .about-doing-good .featured-work-section > p, .about-doing-good .side-tab-section > p, main section.about-landing .philosophy > p, main section.about-landing .key-ingredients-list > p, main section.about-landing .awards > p, main section.about-landing .our-offices > p, main section.about-landing .our-history > p, main section.about-landing .leadership > p, .voiceplaybook-page .voiceplaybook > p, .vendorioterms-page .vendorioterms > p {
+    margin-bottom: 4.75rem
+}
+
+main > section > section:nth-child(2n + 3), main > section > section {
+    position: relative;
+    z-index: 10
+}
+
+    main > section > section:nth-child(2n + 3) header > h1 > span, main > section > section header > h1 > span {
+        position: relative;
+        z-index: 1
+    }
+
+    main > section > section:nth-child(2n + 3) {
+        background-color: #f8f9fa
+    }
+
+        main > section > section:nth-child(2n + 3) header > h1 > span {
+            background-color: #f8f9fa
+        }
+
+main > section > section {
+    background-color: transparent
+}
+
+    main > section > section header > h1 > span {
+        background-color: #fff
+    }
+
+main section.work-detail .col-layout-2-8 p:first-child, main section.work-detail .lead-info article section p:first-child, main section.work-detail .work-detail-media-list li .info .content p:first-child, main section.capabilities-landing .lead-info article .content p:first-child, main section.capabilities-detail .lead-info article .content p:first-child, main section.capabilities-detail .services-list .content p:first-child, main section.about-landing .philosophy p:first-child, main section.about-landing .our-history .slides .item > div p:first-child, main section.about-landing .leadership-popups article .description .content p:first-child {
+    margin-top: 0
+}
+
+main section.work-detail .col-layout-2-8 p:last-child, main section.work-detail .lead-info article section p:last-child, main section.work-detail .work-detail-media-list li .info .content p:last-child, main section.capabilities-landing .lead-info article .content p:last-child, main section.capabilities-detail .lead-info article .content p:last-child, main section.capabilities-detail .services-list .content p:last-child, main section.about-landing .philosophy p:last-child, main section.about-landing .our-history .slides .item > div p:last-child, main section.about-landing .leadership-popups article .description .content p:last-child {
+    margin-bottom: 0
+}
+
+nav ul, section.work-cards ul, .our-clients ul, .awards-list ul, .press ul, section.impact-list ul, section.key-ingredients-list ul, section.social-quotes ul, main section.work-detail .lead-info article aside ul, main section.work-detail .work-detail-media-list ul, main section.capabilities-landing .capabilities-list ul, main section.capabilities-detail .lead-info article aside ul, main section.capabilities-detail .services-list ul, .contact-page .form__selector.replaced-select .replaced-select-list, .contact-page .offices__directory, .about-doing-good .side-tab-section .tab-navigation ul, .about-doing-good .side-tab-section .tab-articles, main section.about-landing nav ul, main section.about-landing .our-offices ul, main section.about-landing .leadership-popups ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+    nav ul li, section.work-cards ul li, .our-clients ul li, .awards-list ul li, .press ul li, section.impact-list ul li, section.key-ingredients-list ul li, section.social-quotes ul li, main section.work-detail .lead-info article aside ul li, main section.work-detail .work-detail-media-list ul li, main section.capabilities-landing .capabilities-list ul li, main section.capabilities-detail .lead-info article aside ul li, main section.capabilities-detail .services-list ul li, .contact-page .form__selector.replaced-select .replaced-select-list li, .contact-page .offices__directory li, .about-doing-good .side-tab-section .tab-navigation ul li, .about-doing-good .side-tab-section .tab-articles li, main section.about-landing nav ul li, main section.about-landing .our-offices ul li, main section.about-landing .leadership-popups ul li {
+        list-style: none;
+        margin: 0;
+        padding: 0
+    }
+
+.awards-list h1, .press h1, section.home-page .pro-bono h1, section.work-landing .our-work h1, .contact-page .contact-us h1, .contact-page .join-the-team h1, .contact-page .offices h1, .about-awards .all-awards-list h1, .about-doing-good .testimonial-section h1, .about-doing-good .featured-work-section h1, .about-doing-good .side-tab-section h1, main section.about-landing .philosophy h1, main section.about-landing .key-ingredients-list h1, main section.about-landing .awards h1, main section.about-landing .our-offices h1, main section.about-landing .our-history h1, main section.about-landing .leadership h1, .voiceplaybook-page .voiceplaybook h1, .vendorioterms-page .vendorioterms h1, section.impact-list > header h1, section.key-ingredients-list > header h1, section.work-landing .our-clients > header h1, main section.work-detail .impact-list > header h1, main section.work-detail .awards-list > header h1, main section.work-detail .how > header h1, main section.work-detail .our-summary > header h1, main section.work-detail .press > header h1, main section.work-detail .more-work > header h1, main section.capabilities-detail .services-list > header h1, main section.capabilities-detail .featured-work > header h1, main section.work-detail.txd .media > header h1, .our-clients h1, section.home-page .our-clients h1 {
+    color: #232323;
+    font-size: 1.25rem;
+    font-weight: normal;
+    letter-spacing: 0.3125rem;
+    margin-bottom: 3rem;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase
+}
+
+@media screen and (max-width:50rem) {
+    .awards-list h1, .press h1, section.home-page .pro-bono h1, section.work-landing .our-work h1, .contact-page .contact-us h1, .contact-page .join-the-team h1, .contact-page .offices h1, .about-awards .all-awards-list h1, .about-doing-good .testimonial-section h1, .about-doing-good .featured-work-section h1, .about-doing-good .side-tab-section h1, main section.about-landing .philosophy h1, main section.about-landing .key-ingredients-list h1, main section.about-landing .awards h1, main section.about-landing .our-offices h1, main section.about-landing .our-history h1, main section.about-landing .leadership h1, .voiceplaybook-page .voiceplaybook h1, .vendorioterms-page .vendorioterms h1, section.impact-list > header h1, section.key-ingredients-list > header h1, section.work-landing .our-clients > header h1, main section.work-detail .impact-list > header h1, main section.work-detail .awards-list > header h1, main section.work-detail .how > header h1, main section.work-detail .our-summary > header h1, main section.work-detail .press > header h1, main section.work-detail .more-work > header h1, main section.capabilities-detail .services-list > header h1, main section.capabilities-detail .featured-work > header h1, main section.work-detail.txd .media > header h1, .our-clients h1, section.home-page .our-clients h1 {
+        font-size: 0.75rem;
+        letter-spacing: 2.5
+    }
+}
+
+.awards-list h1::after, .press h1::after, section.home-page .pro-bono h1::after, section.work-landing .our-work h1::after, .contact-page .contact-us h1::after, .contact-page .join-the-team h1::after, .contact-page .offices h1::after, .about-awards .all-awards-list h1::after, .about-doing-good .testimonial-section h1::after, .about-doing-good .featured-work-section h1::after, .about-doing-good .side-tab-section h1::after, main section.about-landing .philosophy h1::after, main section.about-landing .key-ingredients-list h1::after, main section.about-landing .awards h1::after, main section.about-landing .our-offices h1::after, main section.about-landing .our-history h1::after, main section.about-landing .leadership h1::after, .voiceplaybook-page .voiceplaybook h1::after, .vendorioterms-page .vendorioterms h1::after, section.impact-list > header h1::after, section.key-ingredients-list > header h1::after, section.work-landing .our-clients > header h1::after, main section.work-detail .impact-list > header h1::after, main section.work-detail .awards-list > header h1::after, main section.work-detail .how > header h1::after, main section.work-detail .our-summary > header h1::after, main section.work-detail .press > header h1::after, main section.work-detail .more-work > header h1::after, main section.capabilities-detail .services-list > header h1::after, main section.capabilities-detail .featured-work > header h1::after, main section.work-detail.txd .media > header h1::after, .our-clients h1::after, section.home-page .our-clients h1::after {
+    background: #232323;
+    content: '';
+    height: 0.0625rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 33vw
+}
+
+@media screen and (max-width:41.6875rem) {
+    .awards-list h1::after, .press h1::after, section.home-page .pro-bono h1::after, section.work-landing .our-work h1::after, .contact-page .contact-us h1::after, .contact-page .join-the-team h1::after, .contact-page .offices h1::after, .about-awards .all-awards-list h1::after, .about-doing-good .testimonial-section h1::after, .about-doing-good .featured-work-section h1::after, .about-doing-good .side-tab-section h1::after, main section.about-landing .philosophy h1::after, main section.about-landing .key-ingredients-list h1::after, main section.about-landing .awards h1::after, main section.about-landing .our-offices h1::after, main section.about-landing .our-history h1::after, main section.about-landing .leadership h1::after, .voiceplaybook-page .voiceplaybook h1::after, .vendorioterms-page .vendorioterms h1::after, section.impact-list > header h1::after, section.key-ingredients-list > header h1::after, section.work-landing .our-clients > header h1::after, main section.work-detail .impact-list > header h1::after, main section.work-detail .awards-list > header h1::after, main section.work-detail .how > header h1::after, main section.work-detail .our-summary > header h1::after, main section.work-detail .press > header h1::after, main section.work-detail .more-work > header h1::after, main section.capabilities-detail .services-list > header h1::after, main section.capabilities-detail .featured-work > header h1::after, main section.work-detail.txd .media > header h1::after, .our-clients h1::after, section.home-page .our-clients h1::after {
+        width: 23vw
+    }
+}
+
+section.impact-list > header h1, section.key-ingredients-list > header h1, section.work-landing .our-work > header h1, section.work-landing .our-clients > header h1, main section.work-detail .impact-list > header h1, main section.work-detail .awards-list > header h1, main section.work-detail .how > header h1, main section.work-detail .our-summary > header h1, main section.work-detail .press > header h1, main section.work-detail .more-work > header h1, main section.capabilities-detail .services-list > header h1, main section.capabilities-detail .featured-work > header h1, main section.about-landing .philosophy > header h1, main section.about-landing .awards > header h1, main section.about-landing .our-history > header h1, main section.about-landing .leadership > header h1, main section.work-detail.txd .media > header h1, section.impact-list > header p, section.key-ingredients-list > header p, section.work-landing .our-work > header p, section.work-landing .our-clients > header p, main section.work-detail .impact-list > header p, main section.work-detail .awards-list > header p, main section.work-detail .how > header p, main section.work-detail .our-summary > header p, main section.work-detail .press > header p, main section.work-detail .more-work > header p, main section.capabilities-detail .services-list > header p, main section.capabilities-detail .featured-work > header p, main section.about-landing .philosophy > header p, main section.about-landing .awards > header p, main section.about-landing .our-history > header p, main section.about-landing .leadership > header p, main section.work-detail.txd .media > header p {
+    text-align: center
+}
+
+section.work-landing .our-work > footer, section.work-landing .our-clients > footer, main section.work-detail .impact-list > footer, main section.work-detail .awards-list > footer, main section.work-detail .how > footer, main section.work-detail .our-summary > footer, main section.work-detail .press > footer, main section.work-detail .more-work > footer, main section.about-landing .awards > footer, main section.work-detail.txd .media > footer {
+    text-align: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+    section.work-landing .our-work > footer::after, section.work-landing .our-clients > footer::after, main section.work-detail .impact-list > footer::after, main section.work-detail .awards-list > footer::after, main section.work-detail .how > footer::after, main section.work-detail .our-summary > footer::after, main section.work-detail .press > footer::after, main section.work-detail .more-work > footer::after, main section.about-landing .awards > footer::after, main section.work-detail.txd .media > footer::after {
+        clear: both;
+        content: "";
+        display: block
+    }
+
+*/
+section.work-cards ul, .featured-work__work, main section.work-detail .lead-info article, main section.work-detail .lead-media > div > div, main section.capabilities-landing .lead-info article, main section.about-landing nav .wrap > div, main section.work-detail.txd .lead-media > div > div {
+    box-shadow: 0 0.9375rem 3.75rem rgba(2,2,22,0.1)
+}
+
+section.work-cards article .content .symbol svg, .work__loop svg, .work__arrow svg, section.home-page .carousel__arrow svg, main section.about-landing .circle svg, main section.about-landing .our-history .symbol svg {
+    display: inline-block;
+    height: auto;
+    width: 100%
+}
+/*
+.short-hero {
+ position:relative
+}
+.short-hero:after {
+ content:'';
+ display:block;
+ height:100%;
+ left:0;
+ opacity:.6;
+ position:absolute;
+ top:0;
+ width:100%;
+ z-index:10
+}
+nav ul li {
+ display:inline-block
+}
+html {
+ -moz-osx-font-smoothing:grayscale;
+ -webkit-font-smoothing:antialiased
+}
+h1,h2,h3,h4,h5,h6 {
+ font-weight:normal
+}
+a:link,a:active,a:visited {
+ color:#019ee3;
+ text-decoration:none
+}
+html {
+ background:#232323;
+ color:#fff
+}
+body {
+ -ms-overflow-x:hidden
+}
+body main {
+ background:#fff;
+ color:#232323;
+ min-height:185px
+}
+body.no-scroll {
+ overflow:hidden
+}
+main {
+ position:relative;
+ z-index:2
+}
+main>section>section.under-above {
+ margin-top:-16.625rem!important;
+ padding-top:16.625rem!important;
+ z-index:0!important
+}
+main>section>section.over-below {
+ margin-bottom:6.25rem;
+ z-index:20!important
+}
+main>section>section.over-below>div {
+ position:relative;
+ top:6.25rem
+}
+main>section .over-above {
+ margin-top:-10vh!important;
+ padding-top:0!important;
+ z-index:20!important
+}
+.lead-hero,.short-hero {
+ background:#232323;
+ color:#fff;
+ font-family:"360-Bold",sans-serif;
+ font-size:5rem;
+ height:80vh;
+ position:relative;
+ min-height:610px
+}
+@media screen and (max-width:41.6875rem) {
+ .lead-hero,.short-hero {
+  min-height:0;
+  height:27.5rem
+ }
+}
+.lead-hero header,.short-hero header {
+ max-width:1200px;
+ margin-left:auto;
+ margin-right:auto;
+ display:block;
+ height:100%;
+ position:relative
+}
+.lead-hero header::after,.short-hero header::after {
+ clear:both;
+ content:"";
+ display:block
+}
+.lead-hero header>div,.short-hero header>div {
+ float:left;
+ display:block;
+ margin-right:2.3576520234%;
+ width:100%;
+ -ms-transform:translate(0,-50%);
+ transform:translate(0,-50%);
+ left:0;
+ position:absolute;
+ top:50%
+}
+.lead-hero header>div:last-child,.short-hero header>div:last-child {
+ margin-right:0
+}
+.lead-hero a,.short-hero a {
+ color:inherit;
+ text-decoration:none
+}
+.lead-hero__image,.short-hero__image {
+ -ms-transform:translate(-50%,-50%);
+ transform:translate(-50%,-50%);
+ height:auto;
+ left:50%;
+ max-width:3200px;
+ min-height:100%;
+ min-width:100%;
+ position:absolute;
+ top:50%;
+ width:auto
+}
+@media screen and (max-width:50rem) {
+ .lead-hero__image,.short-hero__image {
+  height:auto;
+  width:100%
+ }
+}
+@media screen and (max-width:22.5rem) {
+ .lead-hero__image,.short-hero__image {
+  height:100%;
+  width:auto
+ }
+}
+.short-hero {
+ height:28.125rem;
+ line-height:1;
+ overflow:hidden;
+ text-align:center;
+ min-height:305px
+}
+@media screen and (max-width:41.6875rem) {
+ .short-hero {
+  font-size:3.125rem;
+  line-height:1
+ }
+}
+.short-hero__header {
+ position:relative;
+ z-index:20
+}
+.short-hero__content {
+ height:100%;
+ left:0;
+ position:absolute;
+ top:0;
+ width:100%;
+ z-index:1
+}
+button,.ghost-button {
+ transition:background-color 0.4s ease-out;
+ background-color:rgba(1,158,227,0);
+ border:0.125rem solid #019ee3;
+ border-radius:3.125rem;
+ color:#019ee3;
+ cursor:pointer;
+ display:inline-block;
+ font-family:"360-Bold",sans-serif;
+ font-size:1rem;
+ letter-spacing:0.16875rem;
+ max-height:3.4rem;
+ overflow:hidden;
+ padding:.8rem 2rem;
+ text-decoration:none
+}
+button span,.ghost-button span {
+ display:inline-block;
+ position:relative
+}
+button:focus,.ghost-button:focus {
+ box-shadow:1px 1px 8px rgba(35,35,35,0.2);
+ outline:0
+}
+button:hover,.ghost-button:hover {
+ background-color:#019ee3;
+ color:#fff
+}
+button:hover span,.ghost-button:hover span {
+ animation:flipIn 0.4s ease-in-out
+}
+@keyframes flipIn {
+ 0% {
+  bottom:0;
+  opacity:1
+ }
+ 50% {
+  bottom:2rem;
+  opacity:0
+ }
+ 50.1% {
+  bottom:-2rem;
+  opacity:0
+ }
+ 100% {
+  bottom:0;
+  opacity:1
+ }
+}
+
+
+*/
+
+section.work-cards.leaders-list .title strong, section.work-cards article header .client {
+    position: relative
+}
+
+    section.work-cards.leaders-list .title strong::before, section.work-cards article header .client::before {
+        border: 1px solid #232323;
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: .5em;
+        left: -14px;
+        position: absolute;
+        top: -2px;
+        width: .5em
+    }
+
+section.work-cards {
+    margin-bottom: 5.5rem
+}
+
+    section.work-cards::after {
+        clear: both;
+        content: "";
+        display: block
+    }
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards {
+        width: 88%
+    }
+}
+
+section.work-cards ul {
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    box-lines: multiple;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    box-pack: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    box-orient: horizontal;
+    box-direction: normal;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    flex-shrink: 1;
+    -ms-flex-negative: 1;
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    flex-grow: 1;
+    -ms-flex-positive: 1;
+    background-color: #fff;
+    float: left;
+    left: 50%;
+    min-width: 0;
+    max-width: 100%;
+    position: relative
+}
+
+    section.work-cards ul li {
+        background: #fff;
+        width: 471px
+    }
+
+    section.work-cards ul aside {
+        box-sizing: border-box;
+        display: block;
+        z-index: 10;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-top: 0px solid transparent;
+        border-bottom: 1px solid #edf0f2;
+        border-right: 1px solid #edf0f2;
+        border-left: 1px solid transparent;
+        opacity: 1
+    }
+
+        section.work-cards ul aside.last {
+            border-bottom: 0px solid transparent
+        }
+
+        section.work-cards ul aside.solo {
+            border-left: 0px solid transparent;
+            border-right: 0px solid transparent
+        }
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards ul aside {
+        border-right: 1px solid transparent
+    }
+}
+
+@media screen and (min-width:50rem) {
+    section.work-cards.leaders-list aside.four-right {
+        border-right: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:64rem) {
+    section.work-cards.leaders-list aside.four-right {
+        border-right: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards.leaders-list aside.four-right {
+        border-right: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:64rem) {
+    section.work-cards.leaders-list aside.three-right {
+        border-right: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:50rem) {
+    section.work-cards.leaders-list aside.three-right {
+        border-right: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards.leaders-list aside.three-right {
+        border-right: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:50rem) {
+    section.work-cards.leaders-list aside.two-right {
+        border-right: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards.leaders-list aside.two-right {
+        border-right: 1px solid transparent
+    }
+}
+
+@media screen and (min-width:50rem) {
+    section.work-cards.leaders-list aside.four-bottom {
+        border-bottom: 0px solid transparent
+    }
+}
+
+@media screen and (max-width:64rem) {
+    section.work-cards.leaders-list aside.four-bottom {
+        border-bottom: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards.leaders-list aside.four-bottom {
+        border-bottom: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:64rem) {
+    section.work-cards.leaders-list aside.three-bottom {
+        border-bottom: 0px solid transparent
+    }
+}
+
+@media screen and (max-width:50rem) {
+    section.work-cards.leaders-list aside.three-bottom {
+        border-bottom: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards.leaders-list aside.three-bottom {
+        border-bottom: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:50rem) {
+    section.work-cards.leaders-list aside.two-bottom {
+        border-bottom: 0px solid transparent
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards.leaders-list aside.two-bottom {
+        border-bottom: 1px solid #edf0f2
+    }
+}
+
+@media screen and (min-width:50rem) {
+    section.work-cards.leaders-list aside.four-left {
+        border-left: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:64rem) {
+    section.work-cards.leaders-list aside.four-left {
+        border-left: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards.leaders-list aside.four-left {
+        border-left: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:64rem) {
+    section.work-cards.leaders-list aside.three-left {
+        border-left: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:50rem) {
+    section.work-cards.leaders-list aside.three-left {
+        border-left: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards.leaders-list aside.three-left {
+        border-left: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:50rem) {
+    section.work-cards.leaders-list aside.two-left {
+        border-left: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards.leaders-list aside.two-left {
+        border-left: 1px solid transparent
+    }
+}
+
+section.work-cards.leaders-list aside.last {
+    border-bottom: 0px solid transparent
+}
+
+section.work-cards.leaders-list ul li {
+    width: 300px
+}
+
+@media screen and (max-width:1334px) {
+    section.work-cards.leaders-list ul li:nth-child(1n) aside {
+        border-right: 1px solid #edf0f2;
+        border-left: 1px solid transparent
+    }
+
+    section.work-cards.leaders-list ul li:nth-child(3n) aside {
+        border-bottom: 1px solid #edf0f2;
+        border-right: 1px solid transparent
+    }
+
+    section.work-cards.leaders-list ul li aside.three-left {
+        border-left: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:999px) {
+    section.work-cards.leaders-list ul li:nth-child(1n) aside {
+        border-right: 1px solid #edf0f2;
+        border-left: 1px solid transparent
+    }
+
+    section.work-cards.leaders-list ul li:nth-child(2n) aside {
+        border-right: 1px solid transparent;
+        border-left: 1px solid transparent
+    }
+
+    section.work-cards.leaders-list ul li aside.two-bottom {
+        border-bottom: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards.leaders-list ul li:nth-child(1n) aside {
+        border-right: 1px solid transparent;
+        border-left: 1px solid transparent
+    }
+
+    section.work-cards.leaders-list ul li aside.two-bottom {
+        border-bottom: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:1334px) {
+    section.work-cards.leaders-list ul {
+        width: 900px
+    }
+}
+
+@media screen and (max-width:999px) {
+    section.work-cards.leaders-list ul {
+        width: 600px
+    }
+}
+
+@media screen and (max-width:675px) {
+    section.work-cards.leaders-list ul {
+        width: 560px
+    }
+
+        section.work-cards.leaders-list ul li {
+            width: 280px
+        }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards.leaders-list ul {
+        width: 100%
+    }
+
+        section.work-cards.leaders-list ul li {
+            width: 100%
+        }
+}
+
+section.work-cards:not(.leaders-list) ul {
+    width: 1140px
+}
+
+    section.work-cards:not(.leaders-list) ul li {
+        width: 380px;
+        height: 464px
+    }
+
+        section.work-cards:not(.leaders-list) ul li:nth-child(1n) aside {
+            height: 464px
+        }
+
+@media screen and (max-width:1281px) {
+    section.work-cards:not(.leaders-list) ul {
+        width: 760px
+    }
+
+        section.work-cards:not(.leaders-list) ul:nth-child(1n) aside {
+            height: 464px;
+            border-right: 1px solid #edf0f2;
+            border-left: 1px solid transparent;
+            border-bottom: 1px solid #edf0f2
+        }
+
+            section.work-cards:not(.leaders-list) ul:nth-child(1n) aside.two-left {
+                border-left: 1px solid #edf0f2
+            }
+
+        section.work-cards:not(.leaders-list) ul:nth-child(2n) aside {
+            border-right: 1px solid transparent;
+            border-left: 1px solid transparent
+        }
+
+        section.work-cards:not(.leaders-list) ul aside.two-bottom {
+            border-bottom: 1px solid transparent
+        }
+}
+
+@media screen and (max-width:859px) {
+    section.work-cards:not(.leaders-list) ul {
+        width: 680px
+    }
+
+        section.work-cards:not(.leaders-list) ul li {
+            width: 340px;
+            height: 415px
+        }
+
+            section.work-cards:not(.leaders-list) ul li:nth-child(1n) aside {
+                height: 415px
+            }
+
+            section.work-cards:not(.leaders-list) ul li:nth-child(2n) aside {
+                border-right: 1px solid transparent
+            }
+}
+
+@media screen and (max-width:800px) {
+    section.work-cards:not(.leaders-list) ul li article:before {
+        padding-bottom: 124%
+    }
+}
+
+@media screen and (max-width:779px) {
+    section.work-cards:not(.leaders-list) ul {
+        width: 600px
+    }
+
+        section.work-cards:not(.leaders-list) ul li {
+            width: 300px;
+            height: 372px
+        }
+
+            section.work-cards:not(.leaders-list) ul li:nth-child(1n) aside {
+                height: 372px
+            }
+
+            section.work-cards:not(.leaders-list) ul li:nth-child(2n) aside {
+                border-right: 1px solid transparent;
+                border-left: 1px solid transparent
+            }
+
+            section.work-cards:not(.leaders-list) ul li article:before {
+                padding-bottom: 124%
+            }
+}
+
+@media screen and (max-width:697px) {
+    section.work-cards:not(.leaders-list) ul {
+        width: 100%
+    }
+
+        section.work-cards:not(.leaders-list) ul li {
+            width: 100%;
+            height: auto
+        }
+
+            section.work-cards:not(.leaders-list) ul li:nth-child(1n) aside {
+                border-bottom: 1px solid #edf0f2;
+                height: 100%;
+                margin-bottom: 1px
+            }
+
+            section.work-cards:not(.leaders-list) ul li:last-child aside {
+                border-bottom: 1px solid transparent
+            }
+
+            section.work-cards:not(.leaders-list) ul li article:before {
+                padding-bottom: 122%
+            }
+}
+
+@media screen and (max-width:1281px) {
+    section.work-cards:not(.leaders-list):not(.landing-workcards) ul li:nth-child(2n) aside {
+        border-right: 1px solid transparent
+    }
+
+    section.work-cards:not(.leaders-list):not(.landing-workcards) ul li:nth-child(3n) {
+        display: none
+    }
+}
+
+@media screen and (max-width:697px) {
+    section.work-cards:not(.leaders-list):not(.landing-workcards) ul li:nth-child(3n) {
+        display: block
+    }
+}
+
+@media screen and (max-width:768px) {
+    section.work-cards:not(.leaders-list) article:before {
+        padding-bottom: 124%
+    }
+}
+
+@media screen and (min-width:50rem) {
+    section.work-cards:not(.leaders-list) aside.three-right {
+        border-right: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:64rem) {
+    section.work-cards:not(.leaders-list) aside.three-right {
+        border-right: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:50rem) {
+    section.work-cards:not(.leaders-list) aside.three-right {
+        border-right: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards:not(.leaders-list) aside.three-right {
+        border-right: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:64rem) {
+    section.work-cards:not(.leaders-list) aside.two-right {
+        border-right: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:50rem) {
+    section.work-cards:not(.leaders-list) aside.two-right {
+        border-right: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards:not(.leaders-list) aside.two-right {
+        border-right: 1px solid transparent
+    }
+}
+
+@media screen and (min-width:50rem) {
+    section.work-cards:not(.leaders-list) aside.three-bottom {
+        border-bottom: 0px solid transparent
+    }
+}
+
+@media screen and (max-width:64rem) {
+    section.work-cards:not(.leaders-list) aside.three-bottom {
+        border-bottom: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:64rem) {
+    section.work-cards:not(.leaders-list) aside.two-bottom {
+        border-bottom: 0px solid transparent
+    }
+}
+
+@media screen and (max-width:50rem) {
+    section.work-cards:not(.leaders-list) aside.two-bottom {
+        border-bottom: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards:not(.leaders-list) aside.two-bottom {
+        border-bottom: 1px solid #edf0f2
+    }
+}
+
+@media screen and (min-width:50rem) {
+    section.work-cards:not(.leaders-list) aside.three-left {
+        border-left: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:64rem) {
+    section.work-cards:not(.leaders-list) aside.three-left {
+        border-left: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:50rem) {
+    section.work-cards:not(.leaders-list) aside.three-left {
+        border-left: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards:not(.leaders-list) aside.three-left {
+        border-left: 1px solid transparent
+    }
+}
+
+@media screen and (max-width:64rem) {
+    section.work-cards:not(.leaders-list) aside.two-left {
+        border-left: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:50rem) {
+    section.work-cards:not(.leaders-list) aside.two-left {
+        border-left: 1px solid #edf0f2
+    }
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards:not(.leaders-list) aside.two-left {
+        border-left: 1px solid transparent
+    }
+}
+
+section.work-cards:not(.leaders-list) aside.last {
+    border-bottom: 0px solid transparent
+}
+
+section.work-cards:not(.leaders-list) aside.solo {
+    border-left: 0px solid #edf0f2;
+    border-right: 0px solid #edf0f2
+}
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards:not(.leaders-list) aside {
+        border-right: 1px solid transparent
+    }
+}
+
+section.work-cards article {
+    position: relative;
+    display: block
+}
+
+    section.work-cards article:before {
+        padding-bottom: 122%
+    }
+
+@media screen and (max-width:50rem) {
+    section.work-cards article:before {
+        padding-bottom: 112%
+    }
+}
+
+section.work-cards article a {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+
+    section.work-cards article a:hover aside {
+        opacity: 0
+    }
+
+    section.work-cards article a:hover .content .image {
+        overflow: visible
+    }
+
+        section.work-cards article a:hover .content .image img {
+            transition: opacity 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+            opacity: .7
+        }
+
+        section.work-cards article a:hover .content .image:before {
+            opacity: 1
+        }
+
+        section.work-cards article a:hover .content .image:after {
+            transition: transform 0.2s ease-out;
+            -ms-transform: scale(1);
+            transform: scale(1);
+            border-color: white
+        }
+
+    section.work-cards article a:hover .client, section.work-cards article a:hover .title, section.work-cards article a:hover .blurb {
+        transition: opacity 0.4s ease-out,transform 0.6s ease-in-out
+    }
+
+    section.work-cards article a:hover .client, section.work-cards article a:hover .title {
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        opacity: 0;
+        position: relative
+    }
+
+    section.work-cards article a:hover .blurb {
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1
+    }
+
+    section.work-cards article a:hover .symbol svg {
+        animation: slideAround 0.4s ease-in-out 0.2s
+    }
+
+@keyframes slideAround {
+    0% {
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1
+    }
+
+    50% {
+        -ms-transform: translateX(200%);
+        transform: translateX(200%);
+        opacity: 0
+    }
+
+    50.1% {
+        -ms-transform: translateX(-200%);
+        transform: translateX(-200%);
+        opacity: 0
+    }
+
+    100% {
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1
+    }
+}
+
+section.work-cards article .content {
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    left: 50%;
+    position: absolute;
+    top: 39%;
+    width: 70%;
+    z-index: 1
+}
+
+    section.work-cards article .content .image {
+        border-radius: 50%;
+        height: 99%;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 99%;
+        transform: translate3d(0,0,0);
+        -webkit-backface-visibility: hidden;
+        -webkit-mask-image: -webkit-radial-gradient(circle,white 100%,black 100%);
+        z-index: 1
+    }
+
+        section.work-cards article .content .image img {
+            transform: translate(-50%,-50%) translateZ(0) scale(1,1);
+            -webkit-backface-visibility: hidden;
+            height: 177%;
+            left: 50%;
+            opacity: 1;
+            position: absolute;
+            top: 70%;
+            width: auto;
+            z-index: 1
+        }
+
+        section.work-cards article .content .image:before {
+            background-color: #2b9bdf;
+            background-image: linear-gradient(to bottom,#2b9bdf,#0bbdd7,#a8dbe9);
+            content: '';
+            display: block;
+            height: calc(145.7 * 1.22%);
+            left: -23%;
+            opacity: 0;
+            position: absolute;
+            top: -19%;
+            width: 145.7%
+        }
+
+        section.work-cards article .content .image:after {
+            -ms-transform: scale(2);
+            transform: scale(2);
+            border: 1px solid;
+            border-color: rgba(255,255,255,0);
+            border-radius: 50%;
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            z-index: 20
+        }
+
+    section.work-cards article .content .symbol {
+        background-color: #fff;
+        border-radius: 50%;
+        bottom: 10%;
+        box-shadow: rgba(35,35,35,0.15) 2px 2px 8px;
+        display: inline-block;
+        height: 3.5rem;
+        line-height: 1;
+        padding: 19px;
+        position: absolute;
+        right: 3%;
+        text-decoration: none;
+        width: 3.5rem;
+        z-index: 40
+    }
+
+        section.work-cards article .content .symbol #Regular_LinkArrow {
+            fill: #019ee3
+        }
+
+section.work-cards article header {
+    bottom: -0.3125rem;
+    color: #161615;
+    font-size: 1.125rem;
+    padding: 0 10% 12% 12%;
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    z-index: 40
+}
+
+@media screen and (max-width:50rem) {
+    section.work-cards article header {
+        bottom: -0.625rem;
+        font-size: 1rem
+    }
+}
+
+@media screen and (max-width:22.5rem) {
+    section.work-cards article header {
+        font-size: 0.75rem
+    }
+}
+
+section.work-cards article header strong {
+    font-family: "360-Bold",sans-serif
+}
+
+section.work-cards article header .blurb {
+    -ms-transform: translateY(50%);
+    transform: translateY(50%);
+    font-size: 1.25rem;
+    line-height: 1.1;
+    bottom: 2.5rem;
+    color: #fff;
+    opacity: 0;
+    position: absolute;
+    padding-right: 20px;
+    margin-left: -20px
+}
+
+section.work-cards article header .title {
+    font-size: 1.275rem;
+    line-height: 1.1
+}
+
+@media screen and (max-width:50rem) {
+    section.work-cards article header .title {
+        font-size: 1.5625rem
+    }
+}
+
+@media screen and (max-width:22.5rem) {
+    section.work-cards article header .title {
+        font-size: 1.125rem
+    }
+}
+
+section.work-cards article header .client, section.work-cards article header .title {
+    opacity: 1
+}
+
+section.work-cards.two-cards ul {
+    width: 760px
+}
+
+    section.work-cards.two-cards ul li {
+        width: 380px
+    }
+
+        section.work-cards.two-cards ul li:nth-child(2n) aside {
+            border-right: 1px solid transparent
+        }
+
+@media screen and (max-width:1266px) {
+    section.work-cards.two-cards ul {
+        width: 760px
+    }
+}
+
+@media screen and (max-width:859px) {
+    section.work-cards.two-cards ul {
+        width: 680px
+    }
+
+        section.work-cards.two-cards ul li {
+            width: 340px
+        }
+}
+
+@media screen and (max-width:800px) {
+    section.work-cards.two-cards ul {
+        width: 600px;
+        height: 372px
+    }
+
+        section.work-cards.two-cards ul li {
+            width: 300px;
+            height: 372px
+        }
+}
+
+@media screen and (max-width:697px) {
+    section.work-cards.two-cards ul {
+        width: 100%;
+        height: inherit
+    }
+
+        section.work-cards.two-cards ul li {
+            width: 100%;
+            height: inherit
+        }
+
+            section.work-cards.two-cards ul li:first-child aside {
+                border-bottom: 1px solid #edf0f2
+            }
+}
+
+@media screen and (max-width:768px) {
+    section.work-cards.two-cards article:before {
+        padding-bottom: 124%
+    }
+}
+
+section.work-cards.one-card ul {
+    width: 380px
+}
+
+    section.work-cards.one-card ul li {
+        width: 380px
+    }
+
+@media screen and (max-width:1266px) {
+    section.work-cards.one-card ul {
+        width: 380px
+    }
+}
+
+@media screen and (max-width:859px) {
+    section.work-cards.one-card ul {
+        width: 340px
+    }
+
+        section.work-cards.one-card ul li {
+            width: 340px
+        }
+}
+
+@media screen and (max-width:800px) {
+    section.work-cards.one-card ul {
+        width: 300px
+    }
+
+        section.work-cards.one-card ul li {
+            width: 300px
+        }
+}
+
+@media screen and (max-width:697px) {
+    section.work-cards.one-card ul {
+        width: 100%
+    }
+
+        section.work-cards.one-card ul li {
+            width: 100%
+        }
+}
+
+@media screen and (max-width:768px) {
+    section.work-cards.one-card article:before {
+        padding-bottom: 124%
+    }
+}
+
+section.work-cards.filterable {
+    max-width: 100%
+}
+
+    section.work-cards.filterable > ul {
+        width: 1260px;
+        box-shadow: none;
+        margin-left: 0.46875rem
+    }
+
+        section.work-cards.filterable > ul li {
+            width: 420px;
+            height: 450px
+        }
+
+@media screen and (max-width:500px) {
+    section.work-cards.filterable > ul li {
+        width: 100%
+    }
+}
+
+section.work-cards.filterable > ul li:nth-child(1n) aside {
+    height: initial
+}
+
+section.work-cards.filterable > ul li.filtered-card {
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    max-width: 420px;
+    opacity: 1
+}
+
+    section.work-cards.filterable > ul li.filtered-card > div {
+        width: 405px;
+        height: 420px;
+        margin: 0 15px 30px 0;
+        box-shadow: rgba(2,2,22,0.2) 0px 2px 25px
+    }
+
+@media screen and (max-width:41.6875rem) {
+    section.work-cards.filterable > ul li.filtered-card > div {
+        width: auto
+    }
+}
+
+section.work-cards.filterable > ul li.hide {
+    max-width: 0;
+    opacity: 0
+}
+
+    section.work-cards.filterable > ul li.hide > div {
+        -ms-transform: scale(0);
+        transform: scale(0)
+    }
+
+section.work-cards.filterable > ul ul.tags {
+    box-shadow: none;
+    width: 100%;
+    position: absolute;
+    font-size: 10px;
+    line-height: 1.1;
+    top: 0rem;
+    color: white;
+    opacity: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 10;
+    background: transparent;
+    -ms-flex-pack: left;
+    justify-content: left;
+    padding: 25px
+}
+
+    section.work-cards.filterable > ul ul.tags li {
+        width: auto;
+        height: auto;
+        box-shadow: none;
+        background: transparent;
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 4px 10px;
+        margin: 0 8px 6px 0
+    }
+
+section.work-cards.filterable article {
+    height: 100%
+}
+
+    section.work-cards.filterable article:before {
+        padding-bottom: 100%
+    }
+
+    section.work-cards.filterable article a:hover aside {
+        opacity: 1
+    }
+
+    section.work-cards.filterable article a:hover ul {
+        opacity: 1
+    }
+
+    section.work-cards.filterable article a:hover .content .image {
+        overflow: hidden
+    }
+
+        section.work-cards.filterable article a:hover .content .image img {
+            transition: opacity 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+            opacity: .25
+        }
+
+        section.work-cards.filterable article a:hover .content .image:before {
+            opacity: 1
+        }
+
+        section.work-cards.filterable article a:hover .content .image:after {
+            transition: transform 0.2s ease-out;
+            -ms-transform: scale(1);
+            transform: scale(1);
+            border: none
+        }
+
+    section.work-cards.filterable article a:hover .client, section.work-cards.filterable article a:hover .title, section.work-cards.filterable article a:hover .blurb {
+        transition: opacity 0.4s ease-out,transform 0.6s ease-in-out
+    }
+
+    section.work-cards.filterable article a:hover .client, section.work-cards.filterable article a:hover .title {
+        -ms-transform: translateY(0%);
+        transform: translateY(0%);
+        opacity: 1;
+        position: relative
+    }
+
+    section.work-cards.filterable article a:hover .blurb {
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1
+    }
+
+    section.work-cards.filterable article a:hover .symbol svg {
+        animation: slideAround 0.4s ease-in-out 0.2s
+    }
+
+    section.work-cards.filterable article .content {
+        -ms-transform: translate(0);
+        transform: translate(0);
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 300px
+    }
+
+        section.work-cards.filterable article .content .image {
+            border-radius: 0;
+            height: 100%;
+            width: 100%
+        }
+
+            section.work-cards.filterable article .content .image:before {
+                z-index: 1
+            }
+
+
+            section.work-cards.filterable article .content .image picture, section.work-cards.filterable article .content .image img {
+                left: 0;
+                top: -25%;
+                -ms-transform: none;
+                transform: none;
+                width: 100%;
+                height: auto
+            }
+
+
+
+@media screen and (max-width:26.5625rem) {
+    section.work-cards.filterable article .content .image picture, section.work-cards.filterable article .content .image img {
+        top: 0
+    }
+}
+
+section.work-cards.filterable article .content .blurb {
+    font-size: 1.625rem;
+    line-height: 1.1;
+    top: 5.625rem;
+    color: #fff;
+    opacity: 0;
+    margin-left: 20px;
+    margin-right: 10px;
+    position: absolute;
+    z-index: 10
+}
+
+section.work-cards.filterable article header {
+    padding: 20px;
+    bottom: 0;
+    height: 120px
+}
+
+    section.work-cards.filterable article header .client {
+        font-size: 1.125rem
+    }
+
+        section.work-cards.filterable article header .client:before {
+            display: none
+        }
+
+    section.work-cards.filterable article header .title {
+        font-size: 1.625rem
+    }
+
+section.work-cards.filterable article .symbol {
+    bottom: -10%;
+    right: 3%
+}
+
+select option:disabled {
+    display: none
+}
+
+.no-touch section.work-cards article a:hover .content .image {
+    -webkit-mask-image: none
+}
+
 
 
 

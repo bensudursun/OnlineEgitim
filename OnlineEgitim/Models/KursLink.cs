@@ -12,15 +12,14 @@ namespace OnlineEgitim.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Egitim
+    public partial class KursLink
     {
-        public int EgitimId { get; set; }
-        public Nullable<int> KategoriId { get; set; }
-        public string EgitimBasligi { get; set; }
-        public string Aciklama { get; set; }
-        public Nullable<int> kullaniciid { get; set; }
+        public int kurskayıtid { get; set; }
+        public string kursLinks { get; set; }
+        public Nullable<int> kursid { get; set; }
+        public string videoad { get; set; }
+        public string icerikbaslik { get; set; }
     
-        public virtual Kategori Kategori { get; set; }
-        public virtual Kullanici Kullanici { get; set; }
+        public virtual Kurs Kurs { get; set; }
     }
 }

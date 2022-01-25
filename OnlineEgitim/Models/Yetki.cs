@@ -18,7 +18,6 @@ namespace OnlineEgitim.Models
         public Nullable<int> KullaniciId { get; set; }
         public Nullable<int> YetkiTurId { get; set; }
     
-        public virtual Kullanici Kullanici { get; set; }
         public virtual YetkiTur YetkiTur { get; set; }
     }
 }

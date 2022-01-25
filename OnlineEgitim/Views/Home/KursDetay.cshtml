@@ -1,0 +1,187 @@
+﻿@model ViewModel
+@{
+    ViewBag.Title = "KursDetay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link href="~/Content/egitimver.css" rel="stylesheet" />
+    <style>
+        .ek {
+            background: #82CCC8;
+            padding: 13px 20px;
+            color: #fff;
+            font-family: oswald, sans-serif;
+            text-transform: uppercase;
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: 1px;
+            min-width: 400px;
+            display: inline-block;
+            text-align: center;
+            font-weight: 400;
+            border-radius: 0;
+            border: 0;
+            transition-property: background-color;
+            width: 100%;
+            cursor: pointer;
+        }
+
+            .ek:hover {
+                background-color: #444b5d;
+                color: #fff;
+            }
+    </style>
+</head>
+@if (Convert.ToBoolean(Session["egitimverenonay"]) == true || Convert.ToInt32(Session["yetkiturid"]) == 2)
+{
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Video Ekle</button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            @using (Html.BeginForm("KursLinkEkle", "Home", FormMethod.Post))
+            {
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">İçerik Başlık</label>
+                            <input name="icerikbaslik" type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Video Adı</label>
+                            <textarea name="videoad" class="form-control" id="message-text"></textarea>
+                        </div><div class="mb-3">
+                            <label for="message-text" class="col-form-label">Video Linki</label>
+                            <textarea name="videolink" class="form-control" id="message-text"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-secondary">Kaydet</button>
+                    </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+}
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @foreach (var o in Model.Kurss)
+            {
+                <div class="col " data-bs-toggle="tooltip" data-bs-placement="top" title="@o.kursbaslik">
+
+                    <div class="card shadow-sm" style="height:500px">
+                        <img style="height:400px" src="@o.kursgoruntu" />
+                        <div class="card-body">
+                            <h4 class="card-text">
+                                @o.kursbaslik
+                            </h4>
+                            <p class="card-text">
+                                @o.aciklama
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">@o.Kullanici.Kullaniciadi</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                @foreach (var b in Model.KursLinks)
+                {
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                @b.icerikbaslik
+                            </button>
+
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-fullscreen-sm-down">
+                                    <div class="modal-content" style="width:1000px; background-color:transparent; border-color:transparent ">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <iframe width="942" height="530" src="@b.kursLinks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </h2>
+
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+
+                            <div class="accordion-body">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal2">@b.videoad </a>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="d-flex justify-content-center mt-5 mb-5">
+    <h3><b>Yorumlar</b></h3>
+</div>
+@foreach (var o in Model.Yorums)
+{
+    <div class="container mb-5">
+        <div class="card">
+            <div class="card-header">
+                @o.Kullanici.Kullaniciadi
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>@o.Yorum1</p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+}
+@using (Html.BeginForm("YorumEkle", "Home", FormMethod.Post))
+{
+    <div class="container mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Yorum Yap</label>
+        <textarea name="yorum" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="container mt-5 mb-5">
+
+        <button class="ek" type="submit">Gönder</button>
+    </div>
+}
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+<script src="~/Scripts/bootbox.js"></script>
+<script src="~/Scripts/bootstrap.bundle.js"></script>
+<script>
+    $(function () {
+        $('#exampleModal').on("click", "#Ekle", function () {
+            var btn = $(this);
+            var id = btn.data("id");
+            $.ajax({
+                type: "POST",
+                url: "/Home/KursLinkEkle/" + id,
+
+            }).fail(function () {
+                bootbox.confirm('Öğrenciye ait ders bulunmamaktadır.');
+
+            });
+
+        });
+    });
+</script>

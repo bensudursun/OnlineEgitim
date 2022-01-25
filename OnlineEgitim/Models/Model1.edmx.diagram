@@ -5,22 +5,26 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="777f5162bc134d2ab496fad1c65d866f" Name="Diagram1" ZoomLevel="63">
-        <EntityTypeShape EntityType="OnlineEgitimModel.Kullanici" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnlineEgitimModel.KullaniciBilgi" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="OnlineEgitimModel.Yetki" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="OnlineEgitimModel.YetkiTur" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="OnlineEgitimModel.FK_KullaniciBilgi_Kullanici" ManuallyRouted="false" />
-        <AssociationConnector Association="OnlineEgitimModel.FK_Yetki_Table_1" ManuallyRouted="false" />
         <AssociationConnector Association="OnlineEgitimModel.FK_Yetki_YetkiTur" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="OnlineEgitimModel.EgitimVeren" Width="1.5" PointX="3" PointY="7.125" />
-        <AssociationConnector Association="OnlineEgitimModel.FK_EgitimVeren_Kullanici" />
         <EntityTypeShape EntityType="OnlineEgitimModel.Egitim" Width="1.5" PointX="5.25" PointY="7" />
         <EntityTypeShape EntityType="OnlineEgitimModel.Kurs" Width="1.5" PointX="8.25" PointY="6.75" />
-        <AssociationConnector Association="OnlineEgitimModel.FK_Egitim_Kullanici" />
-        <AssociationConnector Association="OnlineEgitimModel.FK_Kurs_Kullanici" />
         <EntityTypeShape EntityType="OnlineEgitimModel.Kategori" Width="1.5" PointX="8.375" PointY="0.875" />
         <AssociationConnector Association="OnlineEgitimModel.FK_Egitim_Kategori" />
         <AssociationConnector Association="OnlineEgitimModel.FK_Kurs_Kategori" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.Kullanici" Width="1.5" PointX="0.75" PointY="5.125" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_Egitim_Kullanici" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_Kurs_Kullanici" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.KullaniciBilgi" Width="1.5" PointX="3" PointY="3.125" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_KullaniciBilgi_Kullanici" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.KursLink" Width="1.5" PointX="10.5" PointY="7.5" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_KursLink_Kurs" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.EgitimVeren" Width="1.5" PointX="3" PointY="7" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_EgitimVeren_Kullanici" />
+        <EntityTypeShape EntityType="OnlineEgitimModel.Yorum" Width="1.5" PointX="10.5" PointY="4.625" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_Yorum_Kullanici" />
+        <AssociationConnector Association="OnlineEgitimModel.FK_Yorum_Kurs" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

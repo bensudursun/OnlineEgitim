@@ -28,6 +28,7 @@
           <Property Name="Hakkimda" Type="nvarchar" MaxLength="1000" />
           <Property Name="kullaniciid" Type="int" />
           <Property Name="Soyad" Type="nvarchar" MaxLength="100" />
+          <Property Name="OnayliMi" Type="bit" />
         </EntityType>
         <EntityType Name="Kategori">
           <Key>
@@ -59,6 +60,7 @@
           <Property Name="dogumtarihi" Type="date" />
           <Property Name="linkednprof" Type="nvarchar" MaxLength="200" />
           <Property Name="kullaniciid" Type="int" />
+          <Property Name="yetkiturad" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Kurs">
           <Key>
@@ -72,6 +74,17 @@
           <Property Name="kategoriid" Type="int" />
           <Property Name="kursgoruntu" Type="nvarchar" MaxLength="500" />
           <Property Name="kullaniciid" Type="int" />
+          <Property Name="kurslink" Type="nvarchar" MaxLength="600" />
+        </EntityType>
+        <EntityType Name="KursLink">
+          <Key>
+            <PropertyRef Name="kurskayıtid" />
+          </Key>
+          <Property Name="kurskayıtid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kursLinks" Type="nvarchar" MaxLength="600" />
+          <Property Name="kursid" Type="int" />
+          <Property Name="videoad" Type="nvarchar" MaxLength="100" />
+          <Property Name="icerikbaslik" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Yetki">
           <Key>
@@ -87,6 +100,15 @@
           </Key>
           <Property Name="YetkiTurId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="YetkiTurAd" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Yorum">
+          <Key>
+            <PropertyRef Name="Yorumid" />
+          </Key>
+          <Property Name="Yorumid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Yorum" Type="nvarchar" MaxLength="600" />
+          <Property Name="kullaniciid" Type="int" />
+          <Property Name="kursid" Type="int" />
         </EntityType>
         <Association Name="FK_Egitim_Kategori">
           <End Role="Kategori" Type="Self.Kategori" Multiplicity="0..1" />
@@ -160,15 +182,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Yetki_Table_1">
-          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
-          <End Role="Yetki" Type="Self.Yetki" Multiplicity="*" />
+        <Association Name="FK_KursLink_Kurs">
+          <End Role="Kurs" Type="Self.Kurs" Multiplicity="0..1" />
+          <End Role="KursLink" Type="Self.KursLink" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Kullanici">
-              <PropertyRef Name="KullaniciId" />
+            <Principal Role="Kurs">
+              <PropertyRef Name="KursId" />
             </Principal>
-            <Dependent Role="Yetki">
-              <PropertyRef Name="KullaniciId" />
+            <Dependent Role="KursLink">
+              <PropertyRef Name="kursid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -184,6 +206,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Yorum_Kullanici">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+          <End Role="Yorum" Type="Self.Yorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciId" />
+            </Principal>
+            <Dependent Role="Yorum">
+              <PropertyRef Name="kullaniciid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yorum_Kurs">
+          <End Role="Kurs" Type="Self.Kurs" Multiplicity="0..1" />
+          <End Role="Yorum" Type="Self.Yorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kurs">
+              <PropertyRef Name="KursId" />
+            </Principal>
+            <Dependent Role="Yorum">
+              <PropertyRef Name="kursid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="OnlineEgitimModelStoreContainer">
           <EntitySet Name="Egitim" EntityType="Self.Egitim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EgitimVeren" EntityType="Self.EgitimVeren" Schema="dbo" store:Type="Tables" />
@@ -191,8 +237,10 @@
           <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KullaniciBilgi" EntityType="Self.KullaniciBilgi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kurs" EntityType="Self.Kurs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KursLink" EntityType="Self.KursLink" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Yetki" EntityType="Self.Yetki" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="YetkiTur" EntityType="Self.YetkiTur" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Yorum" EntityType="Self.Yorum" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Egitim_Kategori" Association="Self.FK_Egitim_Kategori">
             <End Role="Kategori" EntitySet="Kategori" />
             <End Role="Egitim" EntitySet="Egitim" />
@@ -217,49 +265,27 @@
             <End Role="Kullanici" EntitySet="Kullanici" />
             <End Role="Kurs" EntitySet="Kurs" />
           </AssociationSet>
-          <AssociationSet Name="FK_Yetki_Table_1" Association="Self.FK_Yetki_Table_1">
-            <End Role="Kullanici" EntitySet="Kullanici" />
-            <End Role="Yetki" EntitySet="Yetki" />
+          <AssociationSet Name="FK_KursLink_Kurs" Association="Self.FK_KursLink_Kurs">
+            <End Role="Kurs" EntitySet="Kurs" />
+            <End Role="KursLink" EntitySet="KursLink" />
           </AssociationSet>
           <AssociationSet Name="FK_Yetki_YetkiTur" Association="Self.FK_Yetki_YetkiTur">
             <End Role="YetkiTur" EntitySet="YetkiTur" />
             <End Role="Yetki" EntitySet="Yetki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yorum_Kullanici" Association="Self.FK_Yorum_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Yorum" EntitySet="Yorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yorum_Kurs" Association="Self.FK_Yorum_Kurs">
+            <End Role="Kurs" EntitySet="Kurs" />
+            <End Role="Yorum" EntitySet="Yorum" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="OnlineEgitimModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Kullanici">
-          <Key>
-            <PropertyRef Name="KullaniciId" />
-          </Key>
-          <Property Name="KullaniciId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Kullaniciadi" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Sifre" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EgitmenId" Type="Int32" />
-          <Property Name="OgrenciId" Type="Int32" />
-          <Property Name="AdminId" Type="Int32" />
-          <NavigationProperty Name="KullaniciBilgi" Relationship="Self.FK_KullaniciBilgi_Kullanici" FromRole="Kullanici" ToRole="KullaniciBilgi" />
-          <NavigationProperty Name="Yetki" Relationship="Self.FK_Yetki_Table_1" FromRole="Kullanici" ToRole="Yetki" />
-          <NavigationProperty Name="EgitimVeren" Relationship="OnlineEgitimModel.FK_EgitimVeren_Kullanici" FromRole="Kullanici" ToRole="EgitimVeren" />
-          <NavigationProperty Name="Egitim" Relationship="OnlineEgitimModel.FK_Egitim_Kullanici" FromRole="Kullanici" ToRole="Egitim" />
-          <NavigationProperty Name="Kurs" Relationship="OnlineEgitimModel.FK_Kurs_Kullanici" FromRole="Kullanici" ToRole="Kurs" />
-        </EntityType>
-        <EntityType Name="KullaniciBilgi">
-          <Key>
-            <PropertyRef Name="kullanicibilgiid" />
-          </Key>
-          <Property Name="kullanicibilgiid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="soyad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="email" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="telefon" Type="Int32" />
-          <Property Name="dogumtarihi" Type="DateTime" Precision="0" />
-          <Property Name="linkednprof" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="kullaniciid" Type="Int32" />
-          <NavigationProperty Name="Kullanici" Relationship="Self.FK_KullaniciBilgi_Kullanici" FromRole="KullaniciBilgi" ToRole="Kullanici" />
-        </EntityType>
         <EntityType Name="Yetki">
           <Key>
             <PropertyRef Name="YetkiId" />
@@ -267,7 +293,6 @@
           <Property Name="YetkiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="KullaniciId" Type="Int32" />
           <Property Name="YetkiTurId" Type="Int32" />
-          <NavigationProperty Name="Kullanici" Relationship="Self.FK_Yetki_Table_1" FromRole="Yetki" ToRole="Kullanici" />
           <NavigationProperty Name="YetkiTur" Relationship="Self.FK_Yetki_YetkiTur" FromRole="Yetki" ToRole="YetkiTur" />
         </EntityType>
         <EntityType Name="YetkiTur">
@@ -278,30 +303,6 @@
           <Property Name="YetkiTurAd" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Yetki" Relationship="Self.FK_Yetki_YetkiTur" FromRole="YetkiTur" ToRole="Yetki" />
         </EntityType>
-        <Association Name="FK_KullaniciBilgi_Kullanici">
-          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
-          <End Role="KullaniciBilgi" Type="Self.KullaniciBilgi" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Kullanici">
-              <PropertyRef Name="KullaniciId" />
-            </Principal>
-            <Dependent Role="KullaniciBilgi">
-              <PropertyRef Name="kullaniciid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Yetki_Table_1">
-          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
-          <End Role="Yetki" Type="Self.Yetki" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Kullanici">
-              <PropertyRef Name="KullaniciId" />
-            </Principal>
-            <Dependent Role="Yetki">
-              <PropertyRef Name="KullaniciId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Yetki_YetkiTur">
           <End Role="YetkiTur" Type="Self.YetkiTur" Multiplicity="0..1" />
           <End Role="Yetki" Type="Self.Yetki" Multiplicity="*" />
@@ -315,37 +316,14 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="OnlineEgitimEntities2" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
-          <EntitySet Name="KullaniciBilgi" EntityType="Self.KullaniciBilgi" />
           <EntitySet Name="Yetki" EntityType="Self.Yetki" />
           <EntitySet Name="YetkiTur" EntityType="Self.YetkiTur" />
-          <AssociationSet Name="FK_KullaniciBilgi_Kullanici" Association="Self.FK_KullaniciBilgi_Kullanici">
-            <End Role="Kullanici" EntitySet="Kullanici" />
-            <End Role="KullaniciBilgi" EntitySet="KullaniciBilgi" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Yetki_Table_1" Association="Self.FK_Yetki_Table_1">
-            <End Role="Kullanici" EntitySet="Kullanici" />
-            <End Role="Yetki" EntitySet="Yetki" />
-          </AssociationSet>
           <AssociationSet Name="FK_Yetki_YetkiTur" Association="Self.FK_Yetki_YetkiTur">
             <End Role="YetkiTur" EntitySet="YetkiTur" />
             <End Role="Yetki" EntitySet="Yetki" />
           </AssociationSet>
-          <EntitySet Name="EgitimVeren" EntityType="OnlineEgitimModel.EgitimVeren" />
-          <AssociationSet Name="FK_EgitimVeren_Kullanici" Association="OnlineEgitimModel.FK_EgitimVeren_Kullanici">
-            <End Role="Kullanici" EntitySet="Kullanici" />
-            <End Role="EgitimVeren" EntitySet="EgitimVeren" />
-          </AssociationSet>
           <EntitySet Name="Egitim" EntityType="OnlineEgitimModel.Egitim" />
           <EntitySet Name="Kurs" EntityType="OnlineEgitimModel.Kurs" />
-          <AssociationSet Name="FK_Egitim_Kullanici" Association="OnlineEgitimModel.FK_Egitim_Kullanici">
-            <End Role="Kullanici" EntitySet="Kullanici" />
-            <End Role="Egitim" EntitySet="Egitim" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Kurs_Kullanici" Association="OnlineEgitimModel.FK_Kurs_Kullanici">
-            <End Role="Kullanici" EntitySet="Kullanici" />
-            <End Role="Kurs" EntitySet="Kurs" />
-          </AssociationSet>
           <EntitySet Name="Kategori" EntityType="OnlineEgitimModel.Kategori" />
           <AssociationSet Name="FK_Egitim_Kategori" Association="OnlineEgitimModel.FK_Egitim_Kategori">
             <End Role="Kategori" EntitySet="Kategori" />
@@ -355,34 +333,40 @@
             <End Role="Kategori" EntitySet="Kategori" />
             <End Role="Kurs" EntitySet="Kurs" />
           </AssociationSet>
+          <EntitySet Name="Kullanici" EntityType="OnlineEgitimModel.Kullanici" />
+          <AssociationSet Name="FK_Egitim_Kullanici" Association="OnlineEgitimModel.FK_Egitim_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Egitim" EntitySet="Egitim" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kurs_Kullanici" Association="OnlineEgitimModel.FK_Kurs_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Kurs" EntitySet="Kurs" />
+          </AssociationSet>
+          <EntitySet Name="KullaniciBilgi" EntityType="OnlineEgitimModel.KullaniciBilgi" />
+          <AssociationSet Name="FK_KullaniciBilgi_Kullanici" Association="OnlineEgitimModel.FK_KullaniciBilgi_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="KullaniciBilgi" EntitySet="KullaniciBilgi" />
+          </AssociationSet>
+          <EntitySet Name="KursLink" EntityType="OnlineEgitimModel.KursLink" />
+          <AssociationSet Name="FK_KursLink_Kurs" Association="OnlineEgitimModel.FK_KursLink_Kurs">
+            <End Role="Kurs" EntitySet="Kurs" />
+            <End Role="KursLink" EntitySet="KursLink" />
+          </AssociationSet>
+          <EntitySet Name="EgitimVeren" EntityType="OnlineEgitimModel.EgitimVeren" />
+          <AssociationSet Name="FK_EgitimVeren_Kullanici" Association="OnlineEgitimModel.FK_EgitimVeren_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="EgitimVeren" EntitySet="EgitimVeren" />
+          </AssociationSet>
+          <EntitySet Name="Yorum" EntityType="OnlineEgitimModel.Yorum" />
+          <AssociationSet Name="FK_Yorum_Kullanici" Association="OnlineEgitimModel.FK_Yorum_Kullanici">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Yorum" EntitySet="Yorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yorum_Kurs" Association="OnlineEgitimModel.FK_Yorum_Kurs">
+            <End Role="Kurs" EntitySet="Kurs" />
+            <End Role="Yorum" EntitySet="Yorum" />
+          </AssociationSet>
           </EntityContainer>
-        <EntityType Name="EgitimVeren">
-          <Key>
-            <PropertyRef Name="egitimVerenId" />
-          </Key>
-          <Property Name="egitimVerenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Adi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="EgitimDurumu" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="il" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Universite" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="Hakkimda" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="kullaniciid" Type="Int32" />
-          <Property Name="Soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Kullanici" Relationship="OnlineEgitimModel.FK_EgitimVeren_Kullanici" FromRole="EgitimVeren" ToRole="Kullanici" />
-        </EntityType>
-        <Association Name="FK_EgitimVeren_Kullanici">
-          <End Type="OnlineEgitimModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
-          <End Type="OnlineEgitimModel.EgitimVeren" Role="EgitimVeren" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Kullanici">
-              <PropertyRef Name="KullaniciId" />
-            </Principal>
-            <Dependent Role="EgitimVeren">
-              <PropertyRef Name="kullaniciid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Egitim">
           <Key>
             <PropertyRef Name="EgitimId" />
@@ -392,8 +376,8 @@
           <Property Name="EgitimBasligi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="kullaniciid" Type="Int32" />
-          <NavigationProperty Name="Kullanici" Relationship="OnlineEgitimModel.FK_Egitim_Kullanici" FromRole="Egitim" ToRole="Kullanici" />
           <NavigationProperty Name="Kategori" Relationship="OnlineEgitimModel.FK_Egitim_Kategori" FromRole="Egitim" ToRole="Kategori" />
+          <NavigationProperty Name="Kullanici" Relationship="OnlineEgitimModel.FK_Egitim_Kullanici" FromRole="Egitim" ToRole="Kullanici" />
         </EntityType>
         <EntityType Name="Kurs">
           <Key>
@@ -407,33 +391,12 @@
           <Property Name="kategoriid" Type="Int32" />
           <Property Name="kursgoruntu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="kullaniciid" Type="Int32" />
-          <NavigationProperty Name="Kullanici" Relationship="OnlineEgitimModel.FK_Kurs_Kullanici" FromRole="Kurs" ToRole="Kullanici" />
           <NavigationProperty Name="Kategori" Relationship="OnlineEgitimModel.FK_Kurs_Kategori" FromRole="Kurs" ToRole="Kategori" />
+          <NavigationProperty Name="Kullanici" Relationship="OnlineEgitimModel.FK_Kurs_Kullanici" FromRole="Kurs" ToRole="Kullanici" />
+          <Property Name="kurslink" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KursLink1" Relationship="OnlineEgitimModel.FK_KursLink_Kurs" FromRole="Kurs" ToRole="KursLink" />
+          <NavigationProperty Name="Yorum" Relationship="OnlineEgitimModel.FK_Yorum_Kurs" FromRole="Kurs" ToRole="Yorum" />
         </EntityType>
-        <Association Name="FK_Egitim_Kullanici">
-          <End Type="OnlineEgitimModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
-          <End Type="OnlineEgitimModel.Egitim" Role="Egitim" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Kullanici">
-              <PropertyRef Name="KullaniciId" />
-            </Principal>
-            <Dependent Role="Egitim">
-              <PropertyRef Name="kullaniciid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Kurs_Kullanici">
-          <End Type="OnlineEgitimModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
-          <End Type="OnlineEgitimModel.Kurs" Role="Kurs" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Kullanici">
-              <PropertyRef Name="KullaniciId" />
-            </Principal>
-            <Dependent Role="Kurs">
-              <PropertyRef Name="kullaniciid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Kategori">
           <Key>
             <PropertyRef Name="KategoriId" />
@@ -467,38 +430,165 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="KullaniciId" />
+          </Key>
+          <Property Name="KullaniciId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kullaniciadi" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EgitmenId" Type="Int32" />
+          <Property Name="OgrenciId" Type="Int32" />
+          <Property Name="AdminId" Type="Int32" />
+          <NavigationProperty Name="Egitim" Relationship="OnlineEgitimModel.FK_Egitim_Kullanici" FromRole="Kullanici" ToRole="Egitim" />
+          <NavigationProperty Name="Kurs" Relationship="OnlineEgitimModel.FK_Kurs_Kullanici" FromRole="Kullanici" ToRole="Kurs" />
+          <NavigationProperty Name="KullaniciBilgi" Relationship="OnlineEgitimModel.FK_KullaniciBilgi_Kullanici" FromRole="Kullanici" ToRole="KullaniciBilgi" />
+          <NavigationProperty Name="EgitimVeren" Relationship="OnlineEgitimModel.FK_EgitimVeren_Kullanici" FromRole="Kullanici" ToRole="EgitimVeren" />
+          <NavigationProperty Name="Yorum" Relationship="OnlineEgitimModel.FK_Yorum_Kullanici" FromRole="Kullanici" ToRole="Yorum" />
+        </EntityType>
+        <Association Name="FK_Egitim_Kullanici">
+          <End Type="OnlineEgitimModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="OnlineEgitimModel.Egitim" Role="Egitim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciId" />
+            </Principal>
+            <Dependent Role="Egitim">
+              <PropertyRef Name="kullaniciid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kurs_Kullanici">
+          <End Type="OnlineEgitimModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="OnlineEgitimModel.Kurs" Role="Kurs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciId" />
+            </Principal>
+            <Dependent Role="Kurs">
+              <PropertyRef Name="kullaniciid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="KullaniciBilgi">
+          <Key>
+            <PropertyRef Name="kullanicibilgiid" />
+          </Key>
+          <Property Name="kullanicibilgiid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="soyad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="telefon" Type="Int32" />
+          <Property Name="dogumtarihi" Type="DateTime" Precision="0" />
+          <Property Name="linkednprof" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="kullaniciid" Type="Int32" />
+          <Property Name="yetkiturad" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Kullanici" Relationship="OnlineEgitimModel.FK_KullaniciBilgi_Kullanici" FromRole="KullaniciBilgi" ToRole="Kullanici" />
+        </EntityType>
+        <Association Name="FK_KullaniciBilgi_Kullanici">
+          <End Type="OnlineEgitimModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="OnlineEgitimModel.KullaniciBilgi" Role="KullaniciBilgi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciId" />
+            </Principal>
+            <Dependent Role="KullaniciBilgi">
+              <PropertyRef Name="kullaniciid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="KursLink">
+          <Key>
+            <PropertyRef Name="kurskayıtid" />
+          </Key>
+          <Property Name="kurskayıtid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kursLinks" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="kursid" Type="Int32" />
+          <NavigationProperty Name="Kurs" Relationship="OnlineEgitimModel.FK_KursLink_Kurs" FromRole="KursLink" ToRole="Kurs" />
+          <Property Name="videoad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="icerikbaslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_KursLink_Kurs">
+          <End Type="OnlineEgitimModel.Kurs" Role="Kurs" Multiplicity="0..1" />
+          <End Type="OnlineEgitimModel.KursLink" Role="KursLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kurs">
+              <PropertyRef Name="KursId" />
+            </Principal>
+            <Dependent Role="KursLink">
+              <PropertyRef Name="kursid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EgitimVeren">
+          <Key>
+            <PropertyRef Name="egitimVerenId" />
+          </Key>
+          <Property Name="egitimVerenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EgitimDurumu" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="il" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Universite" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Hakkimda" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="kullaniciid" Type="Int32" />
+          <Property Name="Soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OnayliMi" Type="Boolean" />
+          <NavigationProperty Name="Kullanici" Relationship="OnlineEgitimModel.FK_EgitimVeren_Kullanici" FromRole="EgitimVeren" ToRole="Kullanici" />
+        </EntityType>
+        <Association Name="FK_EgitimVeren_Kullanici">
+          <End Type="OnlineEgitimModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="OnlineEgitimModel.EgitimVeren" Role="EgitimVeren" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciId" />
+            </Principal>
+            <Dependent Role="EgitimVeren">
+              <PropertyRef Name="kullaniciid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Yorum">
+          <Key>
+            <PropertyRef Name="Yorumid" />
+          </Key>
+          <Property Name="Yorumid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Yorum1" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="kullaniciid" Type="Int32" />
+          <Property Name="kursid" Type="Int32" />
+          <NavigationProperty Name="Kullanici" Relationship="OnlineEgitimModel.FK_Yorum_Kullanici" FromRole="Yorum" ToRole="Kullanici" />
+          <NavigationProperty Name="Kurs" Relationship="OnlineEgitimModel.FK_Yorum_Kurs" FromRole="Yorum" ToRole="Kurs" />
+        </EntityType>
+        <Association Name="FK_Yorum_Kullanici">
+          <End Type="OnlineEgitimModel.Kullanici" Role="Kullanici" Multiplicity="0..1" />
+          <End Type="OnlineEgitimModel.Yorum" Role="Yorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="KullaniciId" />
+            </Principal>
+            <Dependent Role="Yorum">
+              <PropertyRef Name="kullaniciid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yorum_Kurs">
+          <End Type="OnlineEgitimModel.Kurs" Role="Kurs" Multiplicity="0..1" />
+          <End Type="OnlineEgitimModel.Yorum" Role="Yorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kurs">
+              <PropertyRef Name="KursId" />
+            </Principal>
+            <Dependent Role="Yorum">
+              <PropertyRef Name="kursid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="OnlineEgitimModelStoreContainer" CdmEntityContainer="OnlineEgitimEntities2">
-          <EntitySetMapping Name="Kullanici">
-            <EntityTypeMapping TypeName="OnlineEgitimModel.Kullanici">
-              <MappingFragment StoreEntitySet="Kullanici">
-                <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
-                <ScalarProperty Name="Kullaniciadi" ColumnName="Kullaniciadi" />
-                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
-                <ScalarProperty Name="EgitmenId" ColumnName="EgitmenId" />
-                <ScalarProperty Name="OgrenciId" ColumnName="OgrenciId" />
-                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="KullaniciBilgi">
-            <EntityTypeMapping TypeName="OnlineEgitimModel.KullaniciBilgi">
-              <MappingFragment StoreEntitySet="KullaniciBilgi">
-                <ScalarProperty Name="kullanicibilgiid" ColumnName="kullanicibilgiid" />
-                <ScalarProperty Name="ad" ColumnName="ad" />
-                <ScalarProperty Name="soyad" ColumnName="soyad" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="telefon" ColumnName="telefon" />
-                <ScalarProperty Name="dogumtarihi" ColumnName="dogumtarihi" />
-                <ScalarProperty Name="linkednprof" ColumnName="linkednprof" />
-                <ScalarProperty Name="kullaniciid" ColumnName="kullaniciid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Yetki">
             <EntityTypeMapping TypeName="OnlineEgitimModel.Yetki">
               <MappingFragment StoreEntitySet="Yetki">
@@ -516,21 +606,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="EgitimVeren">
-            <EntityTypeMapping TypeName="OnlineEgitimModel.EgitimVeren">
-              <MappingFragment StoreEntitySet="EgitimVeren">
-                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
-                <ScalarProperty Name="kullaniciid" ColumnName="kullaniciid" />
-                <ScalarProperty Name="Hakkimda" ColumnName="Hakkimda" />
-                <ScalarProperty Name="Universite" ColumnName="Universite" />
-                <ScalarProperty Name="il" ColumnName="il" />
-                <ScalarProperty Name="EgitimDurumu" ColumnName="EgitimDurumu" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Adi" ColumnName="Adi" />
-                <ScalarProperty Name="egitimVerenId" ColumnName="egitimVerenId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Egitim">
             <EntityTypeMapping TypeName="OnlineEgitimModel.Egitim">
               <MappingFragment StoreEntitySet="Egitim">
@@ -545,6 +620,7 @@
           <EntitySetMapping Name="Kurs">
             <EntityTypeMapping TypeName="OnlineEgitimModel.Kurs">
               <MappingFragment StoreEntitySet="Kurs">
+                <ScalarProperty Name="kurslink" ColumnName="kurslink" />
                 <ScalarProperty Name="kullaniciid" ColumnName="kullaniciid" />
                 <ScalarProperty Name="kursgoruntu" ColumnName="kursgoruntu" />
                 <ScalarProperty Name="kategoriid" ColumnName="kategoriid" />
@@ -561,6 +637,70 @@
               <MappingFragment StoreEntitySet="Kategori">
                 <ScalarProperty Name="Kategoriad" ColumnName="Kategoriad" />
                 <ScalarProperty Name="KategoriId" ColumnName="KategoriId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanici">
+            <EntityTypeMapping TypeName="OnlineEgitimModel.Kullanici">
+              <MappingFragment StoreEntitySet="Kullanici">
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+                <ScalarProperty Name="OgrenciId" ColumnName="OgrenciId" />
+                <ScalarProperty Name="EgitmenId" ColumnName="EgitmenId" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Kullaniciadi" ColumnName="Kullaniciadi" />
+                <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KullaniciBilgi">
+            <EntityTypeMapping TypeName="OnlineEgitimModel.KullaniciBilgi">
+              <MappingFragment StoreEntitySet="KullaniciBilgi">
+                <ScalarProperty Name="yetkiturad" ColumnName="yetkiturad" />
+                <ScalarProperty Name="kullaniciid" ColumnName="kullaniciid" />
+                <ScalarProperty Name="linkednprof" ColumnName="linkednprof" />
+                <ScalarProperty Name="dogumtarihi" ColumnName="dogumtarihi" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="kullanicibilgiid" ColumnName="kullanicibilgiid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KursLink">
+            <EntityTypeMapping TypeName="OnlineEgitimModel.KursLink">
+              <MappingFragment StoreEntitySet="KursLink">
+                <ScalarProperty Name="icerikbaslik" ColumnName="icerikbaslik" />
+                <ScalarProperty Name="videoad" ColumnName="videoad" />
+                <ScalarProperty Name="kursid" ColumnName="kursid" />
+                <ScalarProperty Name="kursLinks" ColumnName="kursLinks" />
+                <ScalarProperty Name="kurskayıtid" ColumnName="kurskayıtid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EgitimVeren">
+            <EntityTypeMapping TypeName="OnlineEgitimModel.EgitimVeren">
+              <MappingFragment StoreEntitySet="EgitimVeren">
+                <ScalarProperty Name="OnayliMi" ColumnName="OnayliMi" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="kullaniciid" ColumnName="kullaniciid" />
+                <ScalarProperty Name="Hakkimda" ColumnName="Hakkimda" />
+                <ScalarProperty Name="Universite" ColumnName="Universite" />
+                <ScalarProperty Name="il" ColumnName="il" />
+                <ScalarProperty Name="EgitimDurumu" ColumnName="EgitimDurumu" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Adi" ColumnName="Adi" />
+                <ScalarProperty Name="egitimVerenId" ColumnName="egitimVerenId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Yorum">
+            <EntityTypeMapping TypeName="OnlineEgitimModel.Yorum">
+              <MappingFragment StoreEntitySet="Yorum">
+                <ScalarProperty Name="kursid" ColumnName="kursid" />
+                <ScalarProperty Name="kullaniciid" ColumnName="kullaniciid" />
+                <ScalarProperty Name="Yorum1" ColumnName="Yorum" />
+                <ScalarProperty Name="Yorumid" ColumnName="Yorumid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

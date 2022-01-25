@@ -32,17 +32,23 @@ namespace OnlineEgitim.Controllers
 
                 var yetki = (from y in db.Yetki where y.KullaniciId == kullanici.KullaniciId select y).FirstOrDefault();
                 Session["yetkiid"] = yetki.YetkiId;
+                var yetkitur = (from y in db.YetkiTur where y.YetkiTurId == yetki.YetkiTurId select y).FirstOrDefault();
+                Session["yetkiturad"] = yetkitur.YetkiTurAd;
+                Session["yetkiturid"] = yetki.YetkiTurId;
 
                 if (yetki.YetkiTurId == 1)
                 {
                     FormsAuthentication.SetAuthCookie(kullanici.Kullaniciadi, false);
-                    return RedirectToAction("Admin", "Admin");
+                    Session["kullaniciid"] = kullanici.KullaniciId;
+
+                    return RedirectToAction("AdminAnasayfa", "Admin");
                 }
                 if (yetki.YetkiTurId == 2)
                 {
                     FormsAuthentication.SetAuthCookie(kullanici.Kullaniciadi, false);
+                    Session["kullaniciid"] = kullanici.KullaniciId;
 
-                    return RedirectToAction("Egitmen", "Egitmen");
+                    return RedirectToAction("Anasayfa", "Home");
                 }
                 if (yetki.YetkiTurId == 3)
                 {
@@ -76,10 +82,14 @@ namespace OnlineEgitim.Controllers
 
                 var yetki = (from y in db.Yetki where y.KullaniciId == kullanici.KullaniciId select y).FirstOrDefault();
                 Session["yetkiid"] = yetki.YetkiId;
+                var yetkitur = (from y in db.YetkiTur where y.YetkiTurId == yetki.YetkiTurId select y).FirstOrDefault();
+                Session["yetkiturad"] = yetkitur.YetkiTurAd;
 
                 if (yetki.YetkiTurId == 1)
                 {
                     FormsAuthentication.SetAuthCookie(kullanici.Kullaniciadi, false);
+                    Session["kullanicid"] = kullanici.KullaniciId;
+
                     return RedirectToAction("AdminAnasayfa", "Admin");
                 }
             }

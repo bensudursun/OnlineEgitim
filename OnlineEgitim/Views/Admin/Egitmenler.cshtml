@@ -1,5 +1,4 @@
-﻿
-@model ViewModel
+﻿@model ViewModel
 <head>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
 
@@ -18,6 +17,7 @@
         <li class="logout warn"><a href="/Giris/AdminCikis">Çıkış Yap</a></li>
     </ul>
 </header>
+
 <nav role='navigation'>
     <ul class="main">
         <li class="dashboard"><a href="/Admin/AdminAnasayfa">Yönetim Paneli</a></li>
@@ -31,7 +31,7 @@
 <main role="main">
 
     <section class="panel important">
-        <h2>Kullanıcılar</h2>
+        <h2>Eğitmenler</h2>
     </section>
 
     <section class="panel important" style="padding:40px">
@@ -48,19 +48,22 @@
             <tbody>
                 @foreach (var o in Model.KullaniciBilgis)
                 {
+                    if (@o.yetkiturad == "Egitmen")
+                    {
+                        <tr>
+                            <td>@o.ad</td>
+                            <td>@o.soyad</td>
+                            <td>@o.email</td>
+                            <td>@o.telefon</td>
 
 
-                    <tr>
-                        <td>@o.ad</td>
-                        <td>@o.soyad</td>
-                        <td>@o.email</td>
-                        <td>@o.telefon</td>
-                        <td>@o.yetkiturad</td>
+                            <td>@o.yetkiturad</td>
+                            
+                        </tr>
 
-                    </tr>
-
+                    }
                 }
-            </tbody>
+                </tbody>
         </table>
     </section>
 </main>

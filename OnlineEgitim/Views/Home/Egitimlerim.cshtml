@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Egitimlerim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @foreach (var o in Model.Kurss)
+            {
+                <a href="/Home/KursDetay/@o.KursId" style="color:black; text-decoration:none">
+                    <div class="col " data-bs-toggle="tooltip" data-bs-placement="top" title="@o.kursbaslik">
+
+                        <div class="card shadow-sm" style="height:500px">
+                            <img style="height:400px" src="@o.kursgoruntu" />
+                            <div class="card-body">
+                                <h4 class="card-text">
+                                    @o.kursbaslik
+                                </h4>
+                                <p class="card-text">
+                                    @o.aciklama
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">@o.Kullanici.Kullaniciadi</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            }
+
+        </div>
+    </div>
+</div>

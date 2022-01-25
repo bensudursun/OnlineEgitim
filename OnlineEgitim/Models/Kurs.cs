@@ -14,6 +14,13 @@ namespace OnlineEgitim.Models
     
     public partial class Kurs
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Kurs()
+        {
+            this.KursLink1 = new HashSet<KursLink>();
+            this.Yorum = new HashSet<Yorum>();
+        }
+    
         public int KursId { get; set; }
         public string kursbaslik { get; set; }
         public string aciklama { get; set; }
@@ -22,8 +29,13 @@ namespace OnlineEgitim.Models
         public Nullable<int> kategoriid { get; set; }
         public string kursgoruntu { get; set; }
         public Nullable<int> kullaniciid { get; set; }
+        public string kurslink { get; set; }
     
-        public virtual Kullanici Kullanici { get; set; }
         public virtual Kategori Kategori { get; set; }
+        public virtual Kullanici Kullanici { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KursLink> KursLink1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Yorum> Yorum { get; set; }
     }
 }

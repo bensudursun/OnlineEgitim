@@ -17,11 +17,11 @@ namespace OnlineEgitim.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Kullanici()
         {
-            this.KullaniciBilgi = new HashSet<KullaniciBilgi>();
-            this.Yetki = new HashSet<Yetki>();
-            this.EgitimVeren = new HashSet<EgitimVeren>();
             this.Egitim = new HashSet<Egitim>();
             this.Kurs = new HashSet<Kurs>();
+            this.KullaniciBilgi = new HashSet<KullaniciBilgi>();
+            this.EgitimVeren = new HashSet<EgitimVeren>();
+            this.Yorum = new HashSet<Yorum>();
         }
     
         public int KullaniciId { get; set; }
@@ -32,14 +32,14 @@ namespace OnlineEgitim.Models
         public Nullable<int> AdminId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KullaniciBilgi> KullaniciBilgi { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Yetki> Yetki { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EgitimVeren> EgitimVeren { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Egitim> Egitim { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Kurs> Kurs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KullaniciBilgi> KullaniciBilgi { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EgitimVeren> EgitimVeren { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Yorum> Yorum { get; set; }
     }
 }

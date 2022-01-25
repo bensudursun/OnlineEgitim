@@ -1,7 +1,8 @@
 ﻿@model ViewModel
 
 @{
-    ViewBag.Title = "Profil";
+    ViewBag.Title = "EgitimVer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <head>
     <style>
@@ -26,13 +27,13 @@
 
                 {
 
-                    <h3 style = "text-align:center" > @o.ad &nbsp; @o.soyad </h3><br/>
+                    <h3 style="text-align:center"> @o.ad  @o.soyad </h3><br />
 
-                    <h4 style = "text-align:center" > @o.email &nbsp; @o.telefon </h4><br/>
+                    <h4 style="text-align:center"> @o.email &nbsp; @o.telefon </h4><br />
 
-                    <h6 style = "text-align:center" > @o.dogumtarihi </h6><br/>
+                    <h6 style="text-align:center"> @o.dogumtarihi </h6><br />
 
-                    <h6 style = "text-align:center" > @o.linkednprof </h6><br />
+                    <h6 style="text-align:center"> @o.linkednprof </h6><br />
                 }
             }
         }

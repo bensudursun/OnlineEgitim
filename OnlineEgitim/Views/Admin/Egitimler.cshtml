@@ -1,5 +1,4 @@
-﻿
-@model ViewModel
+﻿@model ViewModel
 <head>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
 
@@ -38,25 +37,25 @@
         <table class="table table-bordered table table-hover" id="tablo">
             <thead>
                 <tr>
-                    <th> Ad</th>
-                    <th> Soyad</th>
-                    <th> E-mail</th>
-                    <th>Telefon</th>
-                    <th>Kullanıcı Türü</th>
+                    <th> Eğitim Başlık</th>
+                    <th> Açıklama</th>
+                    <th> Düzey</th>
+                    <th>Dil</th>
+                    <th>Kategori</th>
+                    <th>Eğitimci</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var o in Model.KullaniciBilgis)
+                @foreach (var o in Model.Kurss)
                 {
 
-
                     <tr>
-                        <td>@o.ad</td>
-                        <td>@o.soyad</td>
-                        <td>@o.email</td>
-                        <td>@o.telefon</td>
-                        <td>@o.yetkiturad</td>
-
+                        <td>@o.kursbaslik</td>
+                        <td>@o.aciklama</td>
+                        <td>@o.Düzey</td>
+                        <td>@o.Dil</td>
+                        <td>@o.Kategori.Kategoriad</td>
+                        <td>@o.Kullanici.KullaniciId</td>
                     </tr>
 
                 }

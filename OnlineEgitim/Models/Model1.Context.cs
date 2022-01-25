@@ -25,13 +25,15 @@ namespace OnlineEgitim.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Kullanici> Kullanici { get; set; }
-        public virtual DbSet<KullaniciBilgi> KullaniciBilgi { get; set; }
         public virtual DbSet<Yetki> Yetki { get; set; }
         public virtual DbSet<YetkiTur> YetkiTur { get; set; }
-        public virtual DbSet<EgitimVeren> EgitimVeren { get; set; }
         public virtual DbSet<Egitim> Egitim { get; set; }
         public virtual DbSet<Kurs> Kurs { get; set; }
         public virtual DbSet<Kategori> Kategori { get; set; }
+        public virtual DbSet<Kullanici> Kullanici { get; set; }
+        public virtual DbSet<KullaniciBilgi> KullaniciBilgi { get; set; }
+        public virtual DbSet<KursLink> KursLink { get; set; }
+        public virtual DbSet<EgitimVeren> EgitimVeren { get; set; }
+        public virtual DbSet<Yorum> Yorum { get; set; }
     }
 }

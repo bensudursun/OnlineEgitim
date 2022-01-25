@@ -55,47 +55,46 @@
         <div class="slider">
             @using (Html.BeginForm("EgitmenBasvuru", "Home", FormMethod.Post))
             {
-            <div class="slider-form slider-one">
-                <label class="input">
-                    <input type="text" class="name" name="Adi" placeholder="Ad">
-                    <input type="text" class="name" name="soyad" placeholder=" Soyad">
-                    <input type="text" class="name" name="email" placeholder="E Mail">
-                </label>
-
-                <button class="first next">Kaydet</button>
-            </div>
-            <div class="slider-form slider-two">
-                <div class="label-ctr">
+                <div class="slider-form slider-one">
                     <label class="input">
-                        <select name="egitimdurumu" class="form-select name" aria-label="Default select example" style=" width: 100%; margin-right:150px; margin-bottom:20px">
-
-                            <option value="0"> Eğitim Durumu</option>
-                            <option value="Lisans"> Lisans</option>
-                            <option value="Yüksek Lisans"> Yüksek Lisans</option>
-                            <option value="Lise"> Lise</option>
-                        </select>
-
-                        <select id="Iller" name="il" class="form-select name" aria-label="Default select example" style=" width: 100%; margin-right:150px; margin-bottom:20px">
-
-                            <option value="0">Şehir</option>
-                        </select>
-                        <select id="uniler" name="universite" class="form-select name" aria-label="Default select example" style=" width: 100%; margin-right:150px; margin-bottom:20px" disabled>
-
-                            <option value="0">Üniversite</option>
-                        </select>
-                        <textarea name="hakkimda" placeholder="Hakkımda" style=" width: 100%; margin-right:150px; height:150px; margin-bottom:20px" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <input type="text" class="name" name="Adi" placeholder="Ad">
+                        <input type="text" class="name" name="soyad" placeholder=" Soyad">
+                        <input type="text" class="name" name="email" placeholder="E Mail">
                     </label>
+
+                    <button class="first next">Kaydet</button>
                 </div>
+                <div class="slider-form slider-two">
+                    <div class="label-ctr">
+                        <label class="input">
+                            <select name="egitimdurumu" class="form-select name" aria-label="Default select example" style=" width: 100%; margin-right:150px; margin-bottom:20px">
 
-                <button type="submit" class="second next">Başvuru Yap</button>
-            </div>
+                                <option value="0"> Eğitim Durumu</option>
+                                <option value="Lisans"> Lisans</option>
+                                <option value="Yüksek Lisans"> Yüksek Lisans</option>
+                                <option value="Lise"> Lise</option>
+                            </select>
 
+                            <select id="Iller" name="il" class="form-select name" aria-label="Default select example" style=" width: 100%; margin-right:150px; margin-bottom:20px">
+
+                                <option value="0">Şehir</option>
+                            </select>
+                            <select id="uniler" name="universite" class="form-select name" aria-label="Default select example" style=" width: 100%; margin-right:150px; margin-bottom:20px" disabled>
+
+                                <option value="0">Üniversite</option>
+                            </select>
+                            <textarea name="hakkimda" placeholder="Hakkımda" style=" width: 100%; margin-right:150px; height:150px; margin-bottom:20px" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="second next">Başvuru Yap</button>
+                </div>
                 <div class="slider-form slider-three">
                     <h3 class="text-white">
-                        Teşekkürler, Başvurunuz alındı.
-                    </h3>
+Son Adım!                    </h3>
                     <button type="submit">Başvuruyu Tamamla</button>
                 </div>
+
             }
         </div>
     </div>

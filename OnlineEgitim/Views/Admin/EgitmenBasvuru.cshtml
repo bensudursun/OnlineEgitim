@@ -1,5 +1,4 @@
-﻿
-@model ViewModel
+﻿@model ViewModel
 <head>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
 
@@ -9,6 +8,18 @@
     <link href="~/Content/DataTables/css/buttons.dataTables.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
     <link href="~/Content/Admin.css" rel="stylesheet" />
+    <style>
+        .text {
+            color: red;
+            background-color: transparent;
+            border-color: black;
+        }
+
+            .text:hover {
+                background-color: transparent;
+                color: black;
+            }
+    </style>
 </head>
 <header role="banner">
     <h1>BS</h1>
@@ -31,37 +42,51 @@
 <main role="main">
 
     <section class="panel important">
-        <h2>Kullanıcılar</h2>
+        <h2>Eğitmen Başvuruları</h2>
     </section>
 
     <section class="panel important" style="padding:40px">
-        <table class="table table-bordered table table-hover" id="tablo">
-            <thead>
-                <tr>
-                    <th> Ad</th>
-                    <th> Soyad</th>
-                    <th> E-mail</th>
-                    <th>Telefon</th>
-                    <th>Kullanıcı Türü</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var o in Model.KullaniciBilgis)
-                {
+        <div>
+            <section id="leaders-list" class="work-cards leaders-list ">
+                <ul>
+                    @foreach (var o in Model.EgitimVerens)
+                    {
+                        <li>
+                            <article>
+                                <a class="leader" href="/Admin/EgitmenBasvuruDetay/@o.kullaniciid" data->
+                                    <aside class=""></aside>
+                                    <header>
+                                        <div class="title">
+                                            <strong> @o.Adi &nbsp; @o.Soyad </strong><br>
+                                            <span>@o.Universite</span>
+                                        </div>
+                                    </header>
+                                    <div class="content">
+                                        
+                                        <div class="image">
+                                            <picture>
+                                                <img style="width:320px; height:320px" src="~/Content/img/pngegg.png" />
 
+                                            </picture>
+                                        </div>
+                                        <div class="symbol">
+                                            <svg viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet">
+                                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <g id="Regular_LinkArrow" transform="translate(-20.000000, -18.000000)" fill="#221F20">
+                                                        <polygon id="Regular_Arrow" points="39.107 26 37.692 27.414 41 30.9997 20 30.9997 20 32.9997 41 32.9997 37.692 36.726 39.107 38.14 45 31.9997"></polygon>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                        </li>
 
-                    <tr>
-                        <td>@o.ad</td>
-                        <td>@o.soyad</td>
-                        <td>@o.email</td>
-                        <td>@o.telefon</td>
-                        <td>@o.yetkiturad</td>
-
-                    </tr>
-
-                }
-            </tbody>
-        </table>
+                    }
+                </ul>
+            </section>
+        </div>
     </section>
 </main>
 <script src="~/Scripts/jquery-3.6.0.js"></script>

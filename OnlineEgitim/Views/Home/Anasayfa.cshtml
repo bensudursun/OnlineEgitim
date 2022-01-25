@@ -1,215 +1,239 @@
-﻿@{
-    ViewBag.Title = "Anasayfa";
+﻿@model ViewModel
+@{
+    ViewBag.Title = "EgitimVer";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <link href="~/Content/homeanasayfa.css" rel="stylesheet" />
+</head>
 <main>
+    <section class="slides">
 
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Güncel Eğitimler</h1>
-                <p class="lead text-muted">
-                    İnsan eğitimle doğmaz ama
-                    eğitimle yaşar. Güncel eğitim videolarını kaçırmayın...
-                </p>
+        <section class="slides-nav">
+            <nav class="slides-nav__nav">
+                <button class="slides-nav__prev js-prev">Prev</button>
+                <button class="slides-nav__next js-next">Next</button>
+            </nav>
+        </section>
+
+        <section class="slide is-active">
+            <div class="slide__content">
+                <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/nfTA8pdaq9A/2000x1100)"></div></figure>
+                <header class="slide__header">
+                    <h2 class="slide__title">
+                        <span class="title-line"><span>Bizimle</span></span>
+                        @if ((Session["yetkiid"] != null)
+)
+                        {
+                            <span class="title-line"><span>Öğreninin  @Session["kullaniciad"]</span></span>
+                        }
+                        else
+                        {
+                            <span class="title-line"><span>Öğreninin</span></span>
+
+                        }
+                    </h2>
+                </header>
             </div>
-        </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide__content">
+                <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/WuQME0I_oZA/2000x1100)"></div></figure>
+                <header class="slide__header">
+                    <h2 class="slide__title">
+                        <span class="title-line"><span>Geleceğinizi</span></span>
+                        <span class="title-line"><span>Keşfedin</span></span>
+                    </h2>
+                </header>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="slide__content">
+                <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/NsWcRlBT_74/2000x1100)"></div></figure>
+                <header class="slide__header">
+                    <h2 class="slide__title">
+                        <span class="title-line"><span>Hayatınıza, Ayak Uyduran</span></span>
+                        <span class="title-line"><span>Öğrenim Deneyimi</span></span>
+                    </h2>
+                </header>
+            </div>
+        </section>
     </section>
+</main>
 
-    <div class="album py-5 bg-light">
-        <div class="container">
+<div class="album py-5 bg-light">
+    <div class="container">
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <iframe width="360" height="250"
-                                src="https://www.youtube.com/embed/OLX6aE_G-VA" title="YouTube video
-player" frameborder="0" allow="accelerometer; autoplay;
-clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        <div class="card-body">
-                            <p class="card-text">
-                                İster ASP.NET
-                                geliştirmenin belirli yönlerini öğrenmek istiyor olun, ister uçtan uca
-                                bir projede ASP.NET ile çalışma konusunda kapsamlı bilgi sahibi
-                                olmakla ilgilenin, hepsine bu eğitim ile sahip olabilirsiniz.
-                            </p>
-                            <div class="d-flex justify-content-between
-align-items-center">
-                                <small class="text-muted">önerilen</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <iframe width="360" height="250"
-                                src="https://www.youtube.com/embed/hHwxdPIUUBo" title="YouTube video
-player" frameborder="0" allow="accelerometer; autoplay;
-clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        <div class="card-body">
-                            <p class="card-text">
-                                Eğitim dahilinde
-                                sıfırdan en ileri seviyeye kadar Javascript'in mimarisini, hangi
-                                alanlarda kullanıldığı, tüm fonksiyonlarını ve nesne tabanlı
-                                programlama yöntemlerini en ayrıntılı şekilde ve bol örneklerle
-                                işlenmektedir.
-                            </p>
-                            <div class="d-flex justify-content-between
-align-items-center">
-                                <small class="text-muted">önerilen</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <iframe width="360" height="250"
-                                src="https://www.youtube.com/embed/llIQYBIAs9A" title="YouTube video
-player" frameborder="0" allow="accelerometer; autoplay;
-clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        <div class="card-body">
-                            <p class="card-text">
-                                Python ile Nesne Tabanlı Programlamayı
-                                öğrenerek daha kaliteli uygulamaları yazabiliyor olacaksınız.
-                                Python'da modül kullanımını detaylı şekilde öğrenerek hazır modülleri
-                                kullanmanın tadına varacaksınız.
-                            </p>
-                            <div class="d-flex justify-content-between
-align-items-center">
-                                <small class="text-muted">önerilen</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
+            @foreach (var o in Model.Kurss)
+            {
+            <a href="/Home/KursDetay/@o.KursId" style="color:black; text-decoration:none" >
+                <div class="col " data-bs-toggle="tooltip" data-bs-placement="top" title="@o.kursbaslik" >
 
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <iframe width="360" height="250"
-                                src="https://www.youtube.com/embed/qJqx7dxWW8I" title="YouTube video
-player" frameborder="0" allow="accelerometer; autoplay;
-clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                    <div class="card shadow-sm" style="height:500px">
+                        <img style="height:400px" src="@o.kursgoruntu" />
                         <div class="card-body">
+                            <h4 class="card-text">
+                                @o.kursbaslik
+                            </h4>
                             <p class="card-text">
-                                Herhangi bir
-                                programlama bilgisi olmayan veya Go dilini öğrenmek isteyen adayların
-                                programlamaya sağlam adımlarla başlamasını desteklemek amacıyla
-                                geliştirdiğimiz kurstur.
+                                @o.aciklama
                             </p>
-                            <div class="d-flex justify-content-between
-align-items-center">
-                                <small class="text-muted">önerilen</small>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">@o.Kullanici.Kullaniciadi</small>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <iframe width="360" height="250"
-                                src="https://www.youtube.com/embed/RJ-4hIXK-Ms" title="YouTube video
-player" frameborder="0" allow="accelerometer; autoplay;
-clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        <div class="card-body">
-                            <p class="card-text">
-                                Sektörde kurumsal organizasyonların
-                                kullandığı backend yazma tekniklerini profesyonel bir akış açısıyla
-                                öğreneceksiniz.
-                            </p><br />
-                            <div class="d-flex justify-content-between
-align-items-center">
-                                <small class="text-muted">önerilen</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <iframe width="360" height="250"
-                                src="https://www.youtube.com/embed/zERL__bD4NI" title="YouTube video
-player" frameborder="0" allow="accelerometer; autoplay;
-clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        <div class="card-body">
-                            <p class="card-text">
-                                Java Nesne Yönelimli Programlama (OOP)
-                                tekniklerini, gerçek hayattaki gibi öğreniyoruz.
-                                Veri tabanına erişim yöntemlerini
-                                temel olarak öğreniyoruz.
-                            </p>
-                            <div class="d-flex justify-content-between
-align-items-center">
-                                <small class="text-muted">önerilen</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <iframe width="360" height="250"
-                                src="https://www.youtube.com/embed/40Ip2UkpJDc" title="YouTube video
-player" frameborder="0" allow="accelerometer; autoplay;
-clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        <div class="card-body">
-                            <p class="card-text">
-                                Kurs kapsamında
-                                algoritma tasarlama becerisinin geliştirilmesi hedeflenmiştir. Bu
-                                kapsamda, temel programla bileşenleri ile temel seviyede kodlama ve
-                                algoritma geliştirme yeteneğinin desteklenmesi amaçlanmıştır.
-                            </p>
-                            <div class="d-flex justify-content-between
-align-items-center">
-                                <small class="text-muted">önerilen</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <iframe width="360" height="250"
-                                src="https://www.youtube.com/embed/rq2zAJ95KCU" title="YouTube video
-player" frameborder="0" allow="accelerometer; autoplay;
-clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        <div class="card-body">
-                            <p class="card-text">
-                                This is a wider card
-                                with supporting text below as a natural lead-in to additional content.
-                                This content is a little bit longer.
-                            </p>
-                            <div class="d-flex justify-content-between
-align-items-center">
-                                <small class="text-muted">önerilen</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <iframe width="360" height="250"
-                                src="https://www.youtube.com/embed/UpQdjipl2OE" title="YouTube video
-player" frameborder="0" allow="accelerometer; autoplay;
-clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        <div class="card-body">
-                            <p class="card-text">
-                                This is a wider card
-                                with supporting text below as a natural lead-in to additional content.
-                                This content is a little bit longer.
-                            </p>
-                            <div class="d-flex justify-content-between
-align-items-center">
-                                <small class="text-muted">önerilen</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </a>
+            }
         </div>
     </div>
-</main>
+</div>
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+<script>
+    (function ($) {
+
+        var SliceSlider = {
+
+            /**
+             * Settings Object
+             */
+            settings: {
+                delta: 0,
+                currentSlideIndex: 0,
+                scrollThreshold: 40,
+                slides: $('.slide'),
+                numSlides: $('.slide').length,
+                navPrev: $('.js-prev'),
+                navNext: $('.js-next'),
+            },
+
+            /**
+             * Init
+             */
+            init: function () {
+                s = this.settings;
+                this.bindEvents();
+            },
+
+            /**
+             * Bind our click, scroll, key events
+             */
+            bindEvents: function () {
+
+                // Scrollwheel & trackpad
+                s.slides.on({
+                    'DOMMouseScroll mousewheel': SliceSlider.handleScroll
+                });
+                // On click prev
+                s.navPrev.on({
+                    'click': SliceSlider.prevSlide
+                });
+                // On click next
+                s.navNext.on({
+                    'click': SliceSlider.nextSlide
+                });
+                // On Arrow keys
+                $(document).keyup(function (e) {
+                    // Left or back arrows
+                    if ((e.which === 37) || (e.which === 38)) {
+                        SliceSlider.prevSlide();
+                    }
+                    // Down or right
+                    if ((e.which === 39) || (e.which === 40)) {
+                        SliceSlider.nextSlide();
+                    }
+                });
+            },
+
+            /**
+             * Interept scroll direction
+             */
+            handleScroll: function (e) {
+
+                // Scrolling up
+                if (e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0) {
+
+                    s.delta--;
+
+                    if (Math.abs(s.delta) >= s.scrollThreshold) {
+                        SliceSlider.prevSlide();
+                    }
+                }
+
+                // Scrolling Down
+                else {
+
+                    s.delta++;
+
+                    if (s.delta >= s.scrollThreshold) {
+                        SliceSlider.nextSlide();
+                    }
+                }
+
+                // Prevent page from scrolling
+                return false;
+            },
+
+            /**
+             * Show Slide
+             */
+            showSlide: function () {
+                // reset
+                s.delta = 0;
+                // Bail if we're already sliding
+                if ($('body').hasClass('is-sliding')) {
+                    return;
+                }
+                // Loop through our slides
+                s.slides.each(function (i, slide) {
+
+                    // Toggle the is-active class to show slide
+                    $(slide).toggleClass('is-active', (i === s.currentSlideIndex));
+                    $(slide).toggleClass('is-prev', (i === s.currentSlideIndex - 1));
+                    $(slide).toggleClass('is-next', (i === s.currentSlideIndex + 1));
+
+                    // Add and remove is-sliding class
+                    $('body').addClass('is-sliding');
+
+                    setTimeout(function () {
+                        $('body').removeClass('is-sliding');
+                    }, 1000);
+                });
+            },
+
+            /**
+             * Previous Slide
+             */
+            prevSlide: function () {
+
+                // If on first slide, loop to last
+                if (s.currentSlideIndex <= 0) {
+                    s.currentSlideIndex = s.numSlides;
+                }
+                s.currentSlideIndex--;
+
+                SliceSlider.showSlide();
+            },
+
+            /**
+             * Next Slide
+             */
+            nextSlide: function () {
+
+                s.currentSlideIndex++;
+
+                // If on last slide, loop to first
+                if (s.currentSlideIndex >= s.numSlides) {
+                    s.currentSlideIndex = 0;
+                }
+
+                SliceSlider.showSlide();
+            },
+        };
+        SliceSlider.init();
+    })(jQuery);
+</script>

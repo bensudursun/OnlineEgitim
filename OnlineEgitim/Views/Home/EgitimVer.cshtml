@@ -5,6 +5,32 @@
 @model ViewModel
 <head>
     <link href="~/Content/egitimver.css" rel="stylesheet" />
+    <style>
+       .ek {
+            background: #82CCC8;
+            padding: 13px 20px;
+            color: #fff;
+            font-family: oswald, sans-serif;
+            text-transform: uppercase;
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: 1px;
+            min-width: 400px;
+            display: inline-block;
+            text-align: center;
+            font-weight: 400;
+            border-radius: 0;
+            border: 0;
+            transition-property: background-color;
+            width: 100%;
+            cursor: pointer;
+        }
+
+           .ek:hover {
+                background-color: #444b5d;
+                color: #fff;
+            }
+    </style>
 </head>
 @using (Html.BeginForm("EgitimVer", "Home", FormMethod.Post))
 {
@@ -58,7 +84,7 @@
                         <textarea name="aciklama"></textarea>
                     </li>
                     <li>
-                        <button class="btn" type="submit">Devam</button>
+                        <button class="ek" type="submit">Devam</button>
                     </li>
                 </ul>
             </div>

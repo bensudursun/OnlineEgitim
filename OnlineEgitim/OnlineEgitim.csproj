@@ -159,6 +159,9 @@
     <Compile Include="Models\Kurs.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\KursLink.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -178,6 +181,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\YetkiTur.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Yorum.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -361,8 +367,14 @@
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\egitimver.css" />
     <Content Include="Content\egitimveren.css" />
+    <Content Include="Content\homeanasayfa.css" />
     <Content Include="Content\img\207-2074624_white-gray-circle-avatar-png-transparent-png-removebg-preview.png" />
+    <Content Include="Content\img\BS-removebg-preview.png" />
+    <Content Include="Content\img\BS__1_-removebg-preview.png" />
+    <Content Include="Content\img\B__S.-removebg-preview.png" />
+    <Content Include="Content\img\kisspng-instructor-led-training-education-learning-compute-online-class-5b38f941e21167.524110491530460481926-removebg-preview.png" />
     <Content Include="Content\img\pngegg.png" />
+    <Content Include="Content\img\user-icon-png-pnglogocom-133466-removebg-preview.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Models\Model1.Context.tt">
@@ -376,6 +388,8 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="pngegg.png" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -522,6 +536,15 @@
     <Content Include="Views\Home\EgitmenBasvuru.cshtml" />
     <Content Include="Views\Home\EgitimVer.cshtml" />
     <Content Include="Views\Admin\Kullanicilar.cshtml" />
+    <Content Include="Views\Admin\AdminProfil.cshtml" />
+    <Content Include="Views\Admin\Egitmenler.cshtml" />
+    <Content Include="Views\Admin\EgitmenBasvuru.cshtml" />
+    <Content Include="Views\Admin\EgitmenBasvuruDetay.cshtml" />
+    <Content Include="Views\Home\KursDetay.cshtml" />
+    <Content Include="Views\Admin\Egitimler.cshtml" />
+    <Content Include="Views\Home\KursEkle.cshtml" />
+    <Content Include="Views\Home\Egitimlerim.cshtml" />
+    <Content Include="Views\Admin\EgitmenOnay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
